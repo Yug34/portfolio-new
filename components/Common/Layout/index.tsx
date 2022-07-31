@@ -1,12 +1,9 @@
-
-
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const LayoutContainer = styled.div`
   min-height: 100vh;
-  background: #181818;
-  color: #fdfdfd;
+  color: #181818;
   width: 100vw;
   display: flex;
   flex-direction: column;

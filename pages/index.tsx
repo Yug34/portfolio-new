@@ -6,11 +6,13 @@ import type {NextPage} from 'next'
 import Head from "next/head";
 import initializeApollo from "../lib/apollo";
 import {gql, useQuery} from "@apollo/client";
-import {useEffect} from "react";
+import {useEffect, useRef} from "react";
+import Typed from "typed.js";
+import HomePage from "../components/Common/HomePage";
 
 export async function getStaticProps(context) {
     const client = initializeApollo();
-    const {data} = await client.query({
+    const { data } = await client.query({
         query: gql`query getRatings {
             ratings {
                 id
@@ -29,21 +31,6 @@ export async function getStaticProps(context) {
 }
 
 const Home: NextPage = ({ratings}) => {
-    const FETCH_RATINGS = gql`query getRatings {
-        ratings {
-            id
-            reviewer
-            comment
-            rate
-        }
-    }`;
-
-    const{loading, error, data} = useQuery(FETCH_RATINGS)
-
-    useEffect(() => {
-        console.log(data)
-    }, [data])
-
     return (
         <>
             <Head>
@@ -54,9 +41,7 @@ const Home: NextPage = ({ratings}) => {
             </Head>
 
             <main>
-                {ratings.map((rating) => (
-                    <div key={rating.id}>{rating.rate}</div>
-                ))}
+               <HomePage ratings={ratings}/>
             </main>
         </>
     )
