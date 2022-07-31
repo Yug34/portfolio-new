@@ -1,3 +1,7 @@
+//TODO:
+//  for a canvas feel -- can use a large PNG
+//  for a grid -- can use
+
 import type {NextPage} from 'next'
 import Head from "next/head";
 import initializeApollo from "../lib/apollo";
@@ -5,27 +9,6 @@ import {gql, useQuery} from "@apollo/client";
 import {useEffect} from "react";
 
 export async function getStaticProps(context) {
-    // const options = {
-    //     method: 'POST',
-    //     headers: {
-    //         'x-hasura-admin-secret': 'boC5iHfKZM564RvZZ5UPpL9lp3MZLi2hMtKGsiU61P1sFRIjdzRbiRHIt6jDv3ap'
-    //     },
-    //     body: JSON.stringify({
-    //         query: `query getRatings {
-    //             ratings {
-    //                 id
-    //                 reviewer
-    //                 comment
-    //                 rate
-    //             }
-    //         }`,
-    //         operationName: "getRatings"
-    //     })
-    // }
-    //
-    // const fetchResponse = await fetch('https://amusing-krill-94.hasura.app/v1/graphql', options)
-    // const responseJson = await fetchResponse.json()
-
     const client = initializeApollo();
     const {data} = await client.query({
         query: gql`query getRatings {
@@ -72,7 +55,7 @@ const Home: NextPage = ({ratings}) => {
 
             <main>
                 {ratings.map((rating) => (
-                    <div>{rating.rate}</div>
+                    <div key={rating.id}>{rating.rate}</div>
                 ))}
             </main>
         </>
