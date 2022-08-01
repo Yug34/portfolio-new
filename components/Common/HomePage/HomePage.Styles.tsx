@@ -31,11 +31,14 @@ export const Strike = styled.div`
 export const NameIntro = styled.div`
   width: 100%;
   font-size: 40px;
-  font-family: 'Dancing Script', cursive;
   align-items: flex-end;
   justify-content: center;
   display: flex;
   flex-direction: row;
+`;
+
+export const Greeting = styled.div`
+  font-family: 'Dancing Script', cursive;
 `;
 
 export const AnimContainer = styled.div`
