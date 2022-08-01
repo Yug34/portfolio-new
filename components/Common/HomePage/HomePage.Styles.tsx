@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Strike = styled.div`
+export const Strike = styled.div<{color: string;}>`
   width: fit-content;
   @keyframes strike {
     0% {
@@ -19,7 +19,7 @@ export const Strike = styled.div`
     left: 0;
     width: 100%;
     height: 3px;
-    background: black;
+    background: ${(props) => props.color || "black"};
     animation-name: strike;
     animation-duration: 2s;
     animation-timing-function: linear;

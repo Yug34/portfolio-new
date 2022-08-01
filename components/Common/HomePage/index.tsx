@@ -11,17 +11,31 @@ const HomePage = () => {
     const [isResearcherTyped, setIsResearcherTyped] = useState(false);
 
     useEffect(() => {
-        const typed = new Typed(eng.current, {
+        const typedEngr = new Typed(eng.current, {
             strings: ["Engineer"], // Strings to display
             typeSpeed: 120,
             showCursor: false,
             onComplete(self: Typed) {
-                setIsEngineerTyped(true)
+                setIsEngineerTyped(true);
+                setTimeout(() => {
+                    typedRsrch.start()
+                }, 500);
             }
         });
 
+        const typedRsrch = new Typed(res.current, {
+            strings: ["Researcher"], // Strings to display
+            typeSpeed: 120,
+            showCursor: false,
+            onComplete(self: Typed) {
+                setIsResearcherTyped(true);
+            }
+        });
+        typedRsrch.stop();
+
         return () => {
-            typed.destroy();
+            typedEngr.destroy();
+            typedRsrch.destroy();
         };
     }, []);
 
@@ -32,13 +46,23 @@ const HomePage = () => {
                 <Image src={sign} width={400} height={200}/>
             </Styles.NameIntro>
 
-            {isEngineerTyped ? (
-                <div ref={eng}/>
-            ) : (
-                <Styles.Strike>
-                    Engineer
-                </Styles.Strike>
-            )}
+            <div>
+                {isEngineerTyped ? (
+                    <Styles.Strike>
+                        Engineer
+                    </Styles.Strike>
+                ) : (
+                    <div ref={eng}/>
+                )}
+
+                {isResearcherTyped ? (
+                    <Styles.Strike>
+                        Researcher
+                    </Styles.Strike>
+                ) : (
+                    <div ref={res}/>
+                )}
+            </div>
         </>
     );
 };
