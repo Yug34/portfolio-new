@@ -46,11 +46,19 @@ const isAppleClient = () => {
     return false;
 };
 
+const breakpoints = {
+    desktopFullWidth: 1920,
+    desktopMiniWidth: 1366,
+    scrollPoint: 1023,
+    tabletWidth: 768
+}
+
 module.exports = {
     px2vw,
     px2vh,
     isClientMobile,
     isTouchDevice,
     isClientSafari,
-    isAppleClient
+    isAppleClient,
+    breakpoints
 };

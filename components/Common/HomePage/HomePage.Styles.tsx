@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Strike = styled.div`
+  width: fit-content;
   @keyframes strike {
     0% {
       width: 0;
@@ -25,6 +26,28 @@ export const Strike = styled.div`
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
+`;
+
+export const NameIntro = styled.div`
+  width: 100%;
+  font-size: 40px;
+  font-family: 'Dancing Script', cursive;
+  align-items: flex-end;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+`;
+
+export const AnimContainer = styled.div`
+  width: 100%;
+  background: #f0f0f0;
+
+  display: flex;
+  flex-direction: column;
+`;
+
+export const EngineerTyped = styled.div`
+  width: 100%;
 `;
 
 export const TypedTitle = styled.div`
