@@ -1,5 +1,5 @@
 import Image from "next/image";
-import sign from "../../../static/yug.png"
+import sign from "../../static/yug.png"
 import * as Styles from "./HomePage.Styles";
 import {useEffect, useRef, useState} from "react";
 import Typed from "typed.js";

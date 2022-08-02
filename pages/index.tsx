@@ -6,7 +6,7 @@ import type {NextPage} from 'next'
 import Head from "next/head";
 import initializeApollo from "../lib/apollo";
 import {gql} from "@apollo/client";
-import HomePage from "../components/Common/HomePage";
+import HomePage from "../components/HomePage";
 
 export async function getStaticProps(context) {
     const client = initializeApollo();

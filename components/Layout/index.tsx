@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {px2vw, breakpoints} from "../../../utils";
+import {px2vw, breakpoints} from "../../utils";
 
 const LayoutContainer = styled.div`
   min-height: 100vh;
