@@ -3,6 +3,7 @@ import sign from "../../static/yug.png"
 import * as Styles from "./HomePage.Styles";
 import {useEffect, useRef, useState} from "react";
 import Typed from "typed.js";
+import {Flex} from "../Common/Flex";
 
 const HomePage = () => {
     const eng = useRef(null);
@@ -46,7 +47,7 @@ const HomePage = () => {
                 <Image src={sign} width={400} height={200}/>
             </Styles.NameIntro>
 
-            <Styles.Flex direction={"column"}>
+            <Flex flexDirection={"column"} width={"fit-content"} align={"center"}>
                 {isEngineerTyped ? (
                     <Styles.Strike>
                         Engineer
@@ -63,8 +64,8 @@ const HomePage = () => {
                     <div ref={res}/>
                 )}
 
-                <div>Contributor</div>
-            </Styles.Flex>
+                <div>A really useful engine</div>
+            </Flex>
         </>
     );
 };
