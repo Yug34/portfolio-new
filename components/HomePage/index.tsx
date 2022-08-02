@@ -46,7 +46,7 @@ const HomePage = () => {
                 <Image src={sign} width={400} height={200}/>
             </Styles.NameIntro>
 
-            <div>
+            <Styles.Flex direction={"column"}>
                 {isEngineerTyped ? (
                     <Styles.Strike>
                         Engineer
@@ -62,7 +62,9 @@ const HomePage = () => {
                 ) : (
                     <div ref={res}/>
                 )}
-            </div>
+
+                <div>Contributor</div>
+            </Styles.Flex>
         </>
     );
 };
