@@ -21,6 +21,7 @@ export const Strike = styled.div<{ color?: string; top?: number; duration?: numb
     top: ${(props) => props.top || 50}%;
     left: 0;
     width: 100%;
+    border-radius: 3px;
     height: 3px;
     background: ${(props) => props.color || "#3F3E55"};
     animation-name: strike;

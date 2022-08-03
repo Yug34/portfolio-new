@@ -10,6 +10,7 @@ const HomePage = () => {
     const res = useRef(null);
     const [isEngineerTyped, setIsEngineerTyped] = useState(false);
     const [isResearcherTyped, setIsResearcherTyped] = useState(false);
+    const [engineDiv, setEngineDiv] = useState((<></>));
 
     useEffect(() => {
         const typedEngr = new Typed(eng.current, {
@@ -30,6 +31,11 @@ const HomePage = () => {
             showCursor: false,
             onComplete(self: Typed) {
                 setIsResearcherTyped(true);
+                setEngineDiv(
+                    <Styles.LineUp>
+                        <Styles.Strike color={"#e00000"} top={110} duration={2} function={"fade-out"}>A really useful little engine</Styles.Strike>
+                    </Styles.LineUp>
+                );
             }
         });
         typedRsrch.stop();
@@ -47,7 +53,7 @@ const HomePage = () => {
                 <Image alt={"Yug"} src={sign} width={400} height={200}/>
             </Styles.NameIntro>
 
-            <Flex flexDirection={"column"} width={"fit-content"} align={"center"}>
+            <Flex flexDirection={"column"} width={"fit-content"} align={"center"} mt="2rem">
                 {isEngineerTyped ? (
                     <Styles.Strike>
                         Engineer
@@ -64,9 +70,9 @@ const HomePage = () => {
                     <div ref={res} style={{minHeight: '30px', fontSize: '24px'}}></div>
                 )}
 
-                <Styles.LineUp>
-                    <Styles.Strike color={"#e00000"} top={110} duration={2} function={"fade-out"}>A really useful little engine</Styles.Strike>
-                </Styles.LineUp>
+                <div style={{minHeight: '30px'}}>
+                    {engineDiv}
+                </div>
             </Flex>
 
         </>
