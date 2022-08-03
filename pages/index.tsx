@@ -28,7 +28,7 @@ export async function getStaticProps(context) {
     }
 }
 
-const textToLoad: string = "Hi!%20I'm";
+const textToLoad: string = "Hey!%20I'm";
 
 const Home: NextPage = ({ratings}) => {
     return (

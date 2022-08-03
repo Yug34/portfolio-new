@@ -1,5 +1,5 @@
 import Image from "next/image";
-import sign from "../../static/yug.png"
+import sign from "../../static/yugHeart.png"
 import * as Styles from "./HomePage.Styles";
 import {useEffect, useRef, useState} from "react";
 import Typed from "typed.js";
@@ -14,7 +14,7 @@ const HomePage = () => {
     useEffect(() => {
         const typedEngr = new Typed(eng.current, {
             strings: ["Engineer"], // Strings to display
-            typeSpeed: 120,
+            typeSpeed: 90,
             showCursor: false,
             onComplete(self: Typed) {
                 setIsEngineerTyped(true);
@@ -26,7 +26,7 @@ const HomePage = () => {
 
         const typedRsrch = new Typed(res.current, {
             strings: ["Researcher"], // Strings to display
-            typeSpeed: 120,
+            typeSpeed: 90,
             showCursor: false,
             onComplete(self: Typed) {
                 setIsResearcherTyped(true);
@@ -43,8 +43,8 @@ const HomePage = () => {
     return (
         <>
             <Styles.NameIntro>
-                <Styles.Greeting>Hi! I'm</Styles.Greeting>
-                <Image src={sign} width={400} height={200}/>
+                <Styles.Greeting>{"Hey! I'm"}</Styles.Greeting>
+                <Image alt={"Yug"} src={sign} width={400} height={200}/>
             </Styles.NameIntro>
 
             <Flex flexDirection={"column"} width={"fit-content"} align={"center"}>
@@ -53,7 +53,7 @@ const HomePage = () => {
                         Engineer
                     </Styles.Strike>
                 ) : (
-                    <div ref={eng}/>
+                    <div ref={eng} style={{minHeight: '30px', fontSize: '24px'}}></div>
                 )}
 
                 {isResearcherTyped ? (
@@ -61,10 +61,10 @@ const HomePage = () => {
                         Researcher
                     </Styles.Strike>
                 ) : (
-                    <div ref={res}/>
+                    <div ref={res} style={{minHeight: '30px', fontSize: '24px'}}></div>
                 )}
 
-                <div>A really useful engine</div>
+                <Styles.Strike color={"#e00000"} top={110}>A really useful little engine</Styles.Strike>
             </Flex>
         </>
     );

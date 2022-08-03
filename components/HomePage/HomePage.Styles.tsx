@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
-export const Strike = styled.div<{ color?: string; }>`
+export const Strike = styled.div<{ color?: string; top?: number; }>`
   width: fit-content;
+  font-size: 24px;
+  min-height: 30px;
   @keyframes strike {
     0% {
       width: 0;
@@ -15,13 +17,13 @@ export const Strike = styled.div<{ color?: string; }>`
   &::after {
     content: ' ';
     position: absolute;
-    top: 50%;
+    top: ${(props) => props.top || 50}%;
     left: 0;
     width: 100%;
     height: 3px;
     background: ${(props) => props.color || "black"};
     animation-name: strike;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
