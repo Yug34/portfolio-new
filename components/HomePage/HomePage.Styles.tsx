@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export const Strike = styled.div<{ color?: string; top?: number; }>`
+export const Strike = styled.div<{ color?: string; top?: number; duration?: number; function?: string; }>`
   width: fit-content;
   font-size: 24px;
   min-height: 30px;
+  color: #3F3E55;
   @keyframes strike {
     0% {
       width: 0;
@@ -21,12 +22,34 @@ export const Strike = styled.div<{ color?: string; top?: number; }>`
     left: 0;
     width: 100%;
     height: 3px;
-    background: ${(props) => props.color || "black"};
+    background: ${(props) => props.color || "#3F3E55"};
     animation-name: strike;
-    animation-duration: 1s;
-    animation-timing-function: linear;
+    animation-duration: ${(props) => props.duration || 1}s;
+    animation-timing-function: ${(props) => props.function || "fade-out"};
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+  }
+`;
+
+export const LineUp = styled.div`
+  animation: 2s lineUp ease-out 1;
+
+  @keyframes lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
   }
 `;
 

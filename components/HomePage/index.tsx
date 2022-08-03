@@ -64,8 +64,11 @@ const HomePage = () => {
                     <div ref={res} style={{minHeight: '30px', fontSize: '24px'}}></div>
                 )}
 
-                <Styles.Strike color={"#e00000"} top={110}>A really useful little engine</Styles.Strike>
+                <Styles.LineUp>
+                    <Styles.Strike color={"#e00000"} top={110} duration={2} function={"fade-out"}>A really useful little engine</Styles.Strike>
+                </Styles.LineUp>
             </Flex>
+
         </>
     );
 };
