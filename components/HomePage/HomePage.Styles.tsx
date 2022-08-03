@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const Strike = styled.div<{ color?: string; top?: number; duration?: number; function?: string; }>`
+export const Strike = styled.div<{ color?: string; top?: number; duration?: number; function?: string; fontColor?: string; }>`
   width: fit-content;
   font-size: 24px;
   min-height: 30px;
-  color: #3F3E55;
+  color: ${(props) => props.fontColor || "rgb(63, 62, 85)"};
   @keyframes strike {
     0% {
       width: 0;
@@ -30,6 +30,12 @@ export const Strike = styled.div<{ color?: string; top?: number; duration?: numb
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
+`;
+
+export const TypedTitle = styled.div<{fontColor?: string;}>`
+  font-size: 24px;
+  min-height: 30px;
+  color: ${(props) => props.fontColor || "rgb(63, 62, 85)"};
 `;
 
 export const LineUp = styled.div`

@@ -33,7 +33,15 @@ const HomePage = () => {
                 setIsResearcherTyped(true);
                 setEngineDiv(
                     <Styles.LineUp>
-                        <Styles.Strike color={"#e00000"} top={110} duration={2} function={"fade-out"}>A really useful little engine</Styles.Strike>
+                        <Styles.Strike
+                            color={"#e00000"}
+                            top={90}
+                            duration={2}
+                            function={"fade-out"}
+                            fontColor={"#000000"}
+                        >
+                            A really useful little engine
+                        </Styles.Strike>
                     </Styles.LineUp>
                 );
             }
@@ -53,13 +61,14 @@ const HomePage = () => {
                 <Image alt={"Yug"} src={sign} width={400} height={200}/>
             </Styles.NameIntro>
 
+
             <Flex flexDirection={"column"} width={"fit-content"} align={"center"} mt="2rem">
                 {isEngineerTyped ? (
                     <Styles.Strike>
                         Engineer
                     </Styles.Strike>
                 ) : (
-                    <div ref={eng} style={{minHeight: '30px', fontSize: '24px'}}></div>
+                    <Styles.TypedTitle ref={eng}></Styles.TypedTitle>
                 )}
 
                 {isResearcherTyped ? (
@@ -67,7 +76,7 @@ const HomePage = () => {
                         Researcher
                     </Styles.Strike>
                 ) : (
-                    <div ref={res} style={{minHeight: '30px', fontSize: '24px'}}></div>
+                    <Styles.TypedTitle ref={res}></Styles.TypedTitle>
                 )}
 
                 <div style={{minHeight: '30px'}}>
