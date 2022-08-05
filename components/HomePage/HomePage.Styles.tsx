@@ -4,7 +4,7 @@ export const Strike = styled.div<{ color?: string; top?: number; duration?: numb
   width: fit-content;
   font-size: 24px;
   min-height: 30px;
-  color: ${(props) => props.fontColor || "rgb(63, 62, 85)"};
+  // color: ${(props) => props.fontColor || "rgb(63, 62, 85)"};
   @keyframes strike {
     0% {
       width: 0;
