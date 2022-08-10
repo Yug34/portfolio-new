@@ -61,14 +61,13 @@ const HomePage = () => {
                 <Image alt={"Yug"} src={sign} width={400} height={200}/>
             </Styles.NameIntro>
 
-
             <Flex flexDirection={"column"} width={"fit-content"} align={"center"} mt="2rem">
                 {isEngineerTyped ? (
                     <Styles.Strike>
                         Engineer
                     </Styles.Strike>
                 ) : (
-                    <Styles.TypedTitle ref={eng}></Styles.TypedTitle>
+                    <Styles.TypedTitle ref={eng}/>
                 )}
 
                 {isResearcherTyped ? (
@@ -76,14 +75,13 @@ const HomePage = () => {
                         Researcher
                     </Styles.Strike>
                 ) : (
-                    <Styles.TypedTitle ref={res}></Styles.TypedTitle>
+                    <Styles.TypedTitle ref={res}/>
                 )}
 
                 <div style={{minHeight: '30px'}}>
                     {engineDiv}
                 </div>
             </Flex>
-
         </>
     );
 };
