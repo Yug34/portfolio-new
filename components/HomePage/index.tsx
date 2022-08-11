@@ -81,6 +81,38 @@ const HomePage = () => {
                 <div style={{minHeight: '30px'}}>
                     {engineDiv}
                 </div>
+
+                <Flex flexDirection={"column"} width={"100%"} align={"center"}>
+                    <h2>Why do I write code?</h2>
+                    <h3>What effect would I like my work to have?</h3>
+
+                    <div>
+                        I want to work towards making computing, software, and information more accessible.
+                    </div>
+
+                    <div>
+                        Accessibility to <b>Hardware</b> and <b>Computing</b> through things like what we currently do at Neverinstall,
+                        running software on our resources and streaming them to users, so
+                        the software can be utilized irrespective of a user's operating system,
+                        or the hardware on which it runs (access to computing).
+                    </div>
+
+                    <div>
+                        Accessibility of <b>software</b>, primarily, by making said software run in
+                        the browser itself, particularly with tech like WASM. Imagine still
+                        uploading images to the random servers on the cloud to convert them from
+                        .PNG to .JPG, or to convert a .docx to a .pdf, that's so 2010!
+                    </div>
+
+                    <div>
+                        Accessibility of <b>information</b>... a by-product of the above two, and
+                        the reason why I want hardware and software to be more accessible --
+                        but more than that, information in and of itself. Could some piece
+                        of information be represented more clearly? Or communicated more
+                        effectively? How do we scale the presentation of that piece
+                        of information so more people can benefit from it?
+                    </div>
+                </Flex>
             </Flex>
         </>
     );
