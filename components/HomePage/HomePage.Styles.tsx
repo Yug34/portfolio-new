@@ -71,5 +71,6 @@ export const NameIntro = styled.div`
 
 export const Greeting = styled.div`
   font-family: 'Dancing Script', cursive;
+  white-space: nowrap;
 `;
 

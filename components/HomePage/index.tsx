@@ -34,7 +34,7 @@ const HomePage = ({ratings}) => {
                 setEngineDiv(
                     <Styles.LineUp>
                         <Styles.Strike
-                            color={"#e00000"}
+                            color={"#E14ED6"}
                             top={90}
                             duration={2}
                             function={"fade-out"}
