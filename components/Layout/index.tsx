@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {px2vw, breakpoints} from "../../utils";
+import Header from "./Header";
 
 const LayoutContainer = styled.div`
   min-height: 100vh;
@@ -23,6 +24,7 @@ const LayoutContainer = styled.div`
 const Layout = ({children}) => {
     return (
         <LayoutContainer>
+            <Header/>
             {children}
         </LayoutContainer>
     );
