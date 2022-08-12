@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {px2vw, breakpoints} from "../../../utils";
+import Link from "next/link";
 
 const HeaderContainer = styled.div`
   width: 100%;
@@ -21,10 +22,12 @@ const Header = () => {
     return (
         <HeaderContainer>
             <LinkContainer>
-                <div>Home</div>
-                <div>Work</div>
-                <div>Ratings</div>
-                <div>Etc.</div>
+                <Link href={"/"}>
+                    <div>Home</div>
+                </Link>
+                <Link href={"/work"}>
+                    <div>Work</div>
+                </Link>
             </LinkContainer>
         </HeaderContainer>
     );
