@@ -5,7 +5,7 @@ const Work: NextPage = () => {
         <div>
             Work!
         </div>
-    )
-}
+    );
+};
 
-export default Work
+export default Work;

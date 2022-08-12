@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {px2vw, breakpoints} from "../../../utils";
 import Link from "next/link";
+import {useRouter} from 'next/router'
 
 const HeaderContainer = styled.div`
   width: 100%;
@@ -18,16 +19,32 @@ const LinkContainer = styled.div`
   align-items: center;
 `;
 
+const links = [
+    {
+        url: '/',
+        name: 'Home'
+    },
+    {
+        url: '/work',
+        name: 'Work'
+    }
+];
+
+const HeaderLink = styled.div<{isCurrent?: boolean;}>`
+  color: ${(props) => props.isCurrent ? 'red' : 'blue'};
+`;
+
 const Header = () => {
+    const { asPath } = useRouter();
+
     return (
         <HeaderContainer>
             <LinkContainer>
-                <Link href={"/"}>
-                    <div>Home</div>
-                </Link>
-                <Link href={"/work"}>
-                    <div>Work</div>
-                </Link>
+                {links.map((link) => (
+                    <Link href={link.url}>
+                        <HeaderLink isCurrent={link.url === asPath}>{link.name}</HeaderLink>
+                    </Link>
+                ))}
             </LinkContainer>
         </HeaderContainer>
     );
