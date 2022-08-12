@@ -5,7 +5,7 @@ import {useEffect, useRef, useState} from "react";
 import Typed from "typed.js";
 import {Flex} from "../Common/Flex";
 
-const HomePage = () => {
+const HomePage = ({ratings}) => {
     const eng = useRef(null);
     const res = useRef(null);
     const [isEngineerTyped, setIsEngineerTyped] = useState(false);

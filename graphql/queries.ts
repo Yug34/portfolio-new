@@ -4,7 +4,9 @@ export const GET_RATINGS = gql`query getRatings {
     ratings {
         id
         reviewer
+        category
         comment
-        rate
+        rating
+        created_at
     }
 }`;

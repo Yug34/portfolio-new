@@ -3,22 +3,14 @@
 //  for a grid -- can use
 
 import type {NextPage} from 'next'
-import Head from "next/head";
 import initializeApollo from "../lib/apollo";
-import {gql} from "@apollo/client";
 import HomePage from "../components/HomePage";
+import {GET_RATINGS} from "../graphql/queries";
 
 export async function getStaticProps(context) {
     const client = initializeApollo();
     const {data} = await client.query({
-        query: gql`query getRatings {
-            ratings {
-                id
-                reviewer
-                comment
-                rate
-            }
-        }`
+        query: GET_RATINGS
     })
 
     return {
