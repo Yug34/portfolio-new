@@ -4,6 +4,7 @@ import * as Styles from "./HomePage.Styles";
 import {useEffect, useRef, useState} from "react";
 import Typed from "typed.js";
 import {Flex} from "../Common/Flex";
+import {GradientText} from "../Common/GradientText";
 
 const HomePage = ({ratings}) => {
     const eng = useRef(null);
@@ -34,8 +35,8 @@ const HomePage = ({ratings}) => {
                 setEngineDiv(
                     <Styles.LineUp>
                         <Styles.Strike
-                            color={"#E14ED6"}
-                            top={90}
+                            color={"linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 50%, rgba(255,158,232,1) 100%)"}
+                            top={93}
                             duration={2}
                             function={"fade-out"}
                             fontColor={"#000000"}
@@ -91,7 +92,7 @@ const HomePage = ({ratings}) => {
                     </div>
 
                     <div>
-                        Accessibility to <b>Hardware</b> and <b>Computing</b> through things like what we currently do at Neverinstall,
+                        Accessibility to <b>Hardware</b> and <b>Computing</b> through things like what we currently do at <GradientText fontSize={16}>Neverinstall</GradientText>,
                         running software on our resources and streaming them to users, so
                         the software can be utilized irrespective of a user's operating system,
                         or the hardware on which it runs (access to computing).
