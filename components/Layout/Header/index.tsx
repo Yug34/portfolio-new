@@ -25,6 +25,12 @@ const LinkContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  >:not(:first-child) {
+    margin-left: 8px;
+  }
+  >:not(:last-child) {
+    margin-right: 8px;
+  }
 `;
 
 const links = [
@@ -38,10 +44,29 @@ const links = [
     }
 ];
 
-const HeaderLink = styled.div<{isCurrent?: boolean;}>`
-  color: ${(props) => props.isCurrent ? '#8C8C92' : '#191924'};
+const Hover = styled.div<{isCurrent?: boolean;}>`
+  display: inline-block;
+  position: relative;
   cursor: pointer;
-  // TODO: Hover states
+  color: ${(props) => props.isCurrent ? '#191924' : '#8C8C92'};
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: ${(props) => props.isCurrent ? '' : 'scaleX(0)'};
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: ${(props) => props.isCurrent ? '#191924' : '#8C8C92'};
+    transform-origin: ${(props) => props.isCurrent ? '' : 'bottom right'};
+    transition: ${(props) => props.isCurrent ? '' : 'transform 0.25s ease-out'};
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 `;
 
 const Header = () => {
@@ -53,7 +78,7 @@ const Header = () => {
             <LinkContainer>
                 {links.map((link) => (
                     <Link href={link.url} key={link.url}>
-                        <HeaderLink isCurrent={link.url === asPath}>{link.name}</HeaderLink>
+                        <Hover isCurrent={link.url === asPath}>{link.name}</Hover>
                     </Link>
                 ))}
             </LinkContainer>
