@@ -4,7 +4,6 @@ interface GradientTextProps {
     background?: string;
     fontSize?: number;
     fontWeight?: number;
-
 }
 
 export const GradientText = styled.div<GradientTextProps>`

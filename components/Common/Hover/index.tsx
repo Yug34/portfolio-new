@@ -3,7 +3,9 @@ import Link from "next/link";
 import React from "react";
 
 interface HoverProps {
+    children: JSX.Element | string;
     href?: string;
+    externalHref?: boolean;
     monoState: boolean;
     isCurrent?: boolean;
     monoTextGradient?: string;
@@ -72,11 +74,19 @@ const HoverLink = styled.a<HoverProps>`
 `;
 
 export const Hover: React.FC<HoverProps> = (props) => {
-    const { href, children } = props;
+    const { href, externalHref, children } = props;
     return href ? (
-        <Link href={href} passHref>
-            <HoverLink {...props} aria-label={"buttonLink"}>{children}</HoverLink>
-        </Link>
+        <>
+            {externalHref ? (
+                <HoverLink {...props} target="_blank" href={href} rel="noopener noreferrer">
+                    {children}
+                </HoverLink>
+            ) : (
+                <Link href={href} passHref>
+                    <HoverLink {...props} aria-label={"buttonLink"}>{children}</HoverLink>
+                </Link>
+            )}
+        </>
     ) : (
         <HoverButton {...props}>{children}</HoverButton>
     )
