@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {px2vw, breakpoints} from "../../../utils";
 import Link from "next/link";
 import {useRouter} from 'next/router'
+import {Hover} from "../../Common/Hover";
 
 const HeaderContainer = styled.div`
   width: 100%;
@@ -44,31 +45,6 @@ const links = [
     }
 ];
 
-const Hover = styled.div<{isCurrent?: boolean;}>`
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  color: ${(props) => props.isCurrent ? '#191924' : '#8C8C92'};
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: ${(props) => props.isCurrent ? '' : 'scaleX(0)'};
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: ${(props) => props.isCurrent ? '#191924' : '#8C8C92'};
-    transform-origin: ${(props) => props.isCurrent ? '' : 'bottom right'};
-    transition: ${(props) => props.isCurrent ? '' : 'transform 0.25s ease-out'};
-  }
-
-  &:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-`;
-
 const Header = () => {
     const { asPath } = useRouter();
 
@@ -78,7 +54,7 @@ const Header = () => {
             <LinkContainer>
                 {links.map((link) => (
                     <Link href={link.url} key={link.url}>
-                        <Hover isCurrent={link.url === asPath}>{link.name}</Hover>
+                        <Hover monoState={false} isCurrent={link.url === asPath}>{link.name}</Hover>
                     </Link>
                 ))}
             </LinkContainer>

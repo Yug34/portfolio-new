@@ -5,6 +5,7 @@ import {useEffect, useRef, useState} from "react";
 import Typed from "typed.js";
 import {Flex} from "../Common/Flex";
 import {GradientText} from "../Common/GradientText";
+import {Hover} from "../Common/Hover";
 
 const HomePage = ({ratings}) => {
     const eng = useRef(null);
@@ -92,7 +93,14 @@ const HomePage = ({ratings}) => {
                     </div>
 
                     <div>
-                        Accessibility to <b>Hardware</b> and <b>Computing</b> through things like what we currently do at <GradientText fontSize={16}>Neverinstall</GradientText>,
+                        Accessibility to <b>Hardware</b> and <b>Computing</b> through things like what we currently do at
+                        <Hover
+                            style={{marginLeft: '4px'}}
+                            monoState={true}
+                            fontWeight={600}
+                        >
+                            Neverinstall
+                        </Hover>,
                         running software on our resources and streaming them to users, so
                         the software can be utilized irrespective of a user's operating system,
                         or the hardware on which it runs (access to computing).
