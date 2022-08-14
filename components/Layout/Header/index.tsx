@@ -41,7 +41,7 @@ const links = [
 const HeaderLink = styled.div<{isCurrent?: boolean;}>`
   color: ${(props) => props.isCurrent ? '#8C8C92' : '#191924'};
   cursor: pointer;
-//  TODO: Hover states
+  // TODO: Hover states
 `;
 
 const Header = () => {
