@@ -26,12 +26,7 @@ const LinkContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  >:not(:first-child) {
-    margin-left: 8px;
-  }
-  >:not(:last-child) {
-    margin-right: 8px;
-  }
+  column-gap: 16px;
 `;
 
 const links = [

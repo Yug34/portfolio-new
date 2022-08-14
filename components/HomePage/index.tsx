@@ -95,6 +95,7 @@ const HomePage = ({ratings}) => {
                     <div>
                         Accessibility to <b>Hardware</b> and <b>Computing</b> through things like what we currently do at
                         <Hover
+                            href={"https://neverinstall.com/"}
                             style={{marginLeft: '4px'}}
                             monoState={true}
                             fontWeight={600}
