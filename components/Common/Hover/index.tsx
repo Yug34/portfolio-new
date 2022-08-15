@@ -12,7 +12,7 @@ interface HoverProps {
     monoLineGradient?: string;
     currentActiveTextGradient?: string;
     currentInactiveTextGradient?: string;
-    fontWeight?: number;
+    fontWeight?: number | string;
 }
 
 const HoverButton = styled.div<HoverProps>`
@@ -22,7 +22,7 @@ const HoverButton = styled.div<HoverProps>`
   background: ${(props) => props.monoState ? (props.monoTextGradient || props.monoLineGradient || "linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 80%, rgba(255,158,232,1) 100%)") : (props.isCurrent ? (props.currentActiveTextGradient || '#191924') : (props.currentInactiveTextGradient || '#8C8C92'))};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: ${(props) => props.fontWeight || 500};
+  font-weight: ${(props) => props.fontWeight ? (typeof props.fontWeight === "string" ? (parseInt(props.fontWeight)) : props.fontWeight) : 500};
   
   &:after {
     content: '';
@@ -89,5 +89,5 @@ export const Hover: React.FC<HoverProps> = (props) => {
         </>
     ) : (
         <HoverButton {...props}>{children}</HoverButton>
-    )
-}
+    );
+};

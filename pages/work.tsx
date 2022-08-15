@@ -2,7 +2,7 @@ import type {NextPage} from 'next'
 import WorkPage from "../components/WorkPage";
 
 const Work: NextPage = () => {
-    return (<WorkPage/>);
+    return <WorkPage/>;
 };
 
 export default Work;
