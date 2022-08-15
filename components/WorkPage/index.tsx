@@ -65,7 +65,7 @@ const WorkPage = () => {
                     "Translated Figma designs to pixel-perfect responsive designs leveraging Next.js with Styled-Components & SCSS.",
                     "This being an early-stage startup, I had the chance to take up opportunities to contribute to, and provide value for the company outside of engineering, for instance, helping with DevRel."
                 ].map((item) => (
-                    <div style={{display: 'flex'}}>
+                    <div style={{display: 'flex'}} key={item}>
                         •<WorkContent dangerouslySetInnerHTML={{__html: item}}/>
                     </div>
                 ))}
@@ -82,7 +82,7 @@ const WorkPage = () => {
                     monoState
                     fontWeight={600}
                 >
-                    Queen's University, SAIL
+                    Queen&apos;s University, SAIL
                 </Hover>
             </CompanyNameContainer>
             <Supervisors>
@@ -111,12 +111,12 @@ const WorkPage = () => {
             </Supervisors>
             <Work>
                 {[
-                    "We’re conducting a multi-vocal literature review on the performance analysis of web applications and their performance optimization methods.",
+                    "We&apos;re conducting a multi-vocal literature review on the performance analysis of web applications and their performance optimization methods.",
                     "We plan to submit a journal paper based on our research, possibly to the Empirical Software Engineering journal.",
                     "Other than research, worked on fixing issues of the SAIL website, as well as refactoring and refining its code.",
                     "Implemented an interactive publications browser with D3.js."
                 ].map((item) => (
-                    <div style={{display: 'flex'}}>
+                    <div style={{display: 'flex'}} key={item}>
                         •<WorkContent dangerouslySetInnerHTML={{__html: item}}/>
                     </div>
                 ))}

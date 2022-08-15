@@ -19,7 +19,7 @@ const HoverButton = styled.div<HoverProps>`
   display: inline-block;
   position: relative;
   cursor: pointer;
-  background: ${(props) => props.monoState ? (props.monoTextGradient || props.monoLineGradient || "linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 80%, rgba(255,158,232,1) 100%)") : (props.isCurrent ? (props.currentActiveTextGradient || '#191924') : (props.currentInactiveTextGradient || '#8C8C92'))};
+  background: ${(props) => props.monoState ? (props.monoTextGradient || props.monoLineGradient || "linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 80%, rgba(255, 20, 20, 1) 100%)") : (props.isCurrent ? (props.currentActiveTextGradient || '#191924') : (props.currentInactiveTextGradient || '#8C8C92'))};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: ${(props) => props.fontWeight ? (typeof props.fontWeight === "string" ? (parseInt(props.fontWeight)) : props.fontWeight) : 500};
@@ -33,7 +33,7 @@ const HoverButton = styled.div<HoverProps>`
     bottom: 0;
     left: 0;
     border-radius: 3px;
-    background: ${(props) => props.monoState ? (props.monoLineGradient || props.monoTextGradient || "linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 80%, rgba(255,158,232,1) 100%)") : (props.isCurrent ? (props.currentActiveTextGradient || '#191924') : (props.currentInactiveTextGradient || '#8C8C92'))};
+    background: ${(props) => props.monoState ? (props.monoLineGradient || props.monoTextGradient || "linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 80%, rgba(255, 20, 20, 1) 100%)") : (props.isCurrent ? (props.currentActiveTextGradient || '#191924') : (props.currentInactiveTextGradient || '#8C8C92'))};
     transform-origin: ${(props) => props.isCurrent ? '' : 'bottom right'};
     transition: ${(props) => props.isCurrent ? '' : 'transform 0.25s ease-out'};
   }
@@ -48,7 +48,7 @@ const HoverLink = styled.a<HoverProps>`
   display: inline-block;
   position: relative;
   cursor: pointer;
-  background: ${(props) => props.monoState ? (props.monoTextGradient || props.monoLineGradient || "linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 80%, rgba(255,158,232,1) 100%)") : (props.isCurrent ? (props.currentActiveTextGradient || '#191924') : (props.currentInactiveTextGradient || '#8C8C92'))};
+  background: ${(props) => props.monoState ? (props.monoTextGradient || props.monoLineGradient || "linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 80%, rgba(255, 20, 20, 1) 100%)") : (props.isCurrent ? (props.currentActiveTextGradient || '#191924') : (props.currentInactiveTextGradient || '#8C8C92'))};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: ${(props) => props.fontWeight || 500};
@@ -62,7 +62,7 @@ const HoverLink = styled.a<HoverProps>`
     bottom: 0;
     left: 0;
     border-radius: 3px;
-    background: ${(props) => props.monoState ? (props.monoLineGradient || props.monoTextGradient || "linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 80%, rgba(255,158,232,1) 100%)") : (props.isCurrent ? (props.currentActiveTextGradient || '#191924') : (props.currentInactiveTextGradient || '#8C8C92'))};
+    background: ${(props) => props.monoState ? (props.monoLineGradient || props.monoTextGradient || "linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 80%, rgba(255, 20, 20, 1) 100%)") : (props.isCurrent ? (props.currentActiveTextGradient || '#191924') : (props.currentInactiveTextGradient || '#8C8C92'))};
     transform-origin: ${(props) => props.isCurrent ? '' : 'bottom right'};
     transition: ${(props) => props.isCurrent ? '' : 'transform 0.25s ease-out'};
   }

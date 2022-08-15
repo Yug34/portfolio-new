@@ -65,7 +65,7 @@ const HomePage = ({ratings}) => {
 
             <Flex flexDirection={"column"} width={"fit-content"} align={"center"} mt="2rem">
                 {isEngineerTyped ? (
-                    <Styles.Strike>
+                    <Styles.Strike strikeHeight={2}>
                         Engineer
                     </Styles.Strike>
                 ) : (
@@ -73,7 +73,7 @@ const HomePage = ({ratings}) => {
                 )}
 
                 {isResearcherTyped ? (
-                    <Styles.Strike>
+                    <Styles.Strike strikeHeight={2}>
                         Researcher
                     </Styles.Strike>
                 ) : (

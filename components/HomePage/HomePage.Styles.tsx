@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Strike = styled.div<{ color?: string; top?: number; duration?: number; function?: string; fontColor?: string; }>`
+export const Strike = styled.div<{ color?: string; top?: number; duration?: number; function?: string; fontColor?: string; strikeHeight?: number; }>`
   width: fit-content;
   font-size: 24px;
   min-height: 30px;
@@ -18,11 +18,11 @@ export const Strike = styled.div<{ color?: string; top?: number; duration?: numb
   &::after {
     content: ' ';
     position: absolute;
-    top: ${(props) => props.top || 50}%;
+    top: ${(props) => props.top || 55}%;
     left: 0;
     width: 100%;
-    border-radius: 3px;
-    height: 3px;
+    border-radius: ${(props) => `${props.strikeHeight || 3}px`};
+    height: ${(props) => `${props.strikeHeight || 3}px`};
     background: ${(props) => props.color || "#3F3E55"};
     animation-name: strike;
     animation-duration: ${(props) => props.duration || 1}s;
