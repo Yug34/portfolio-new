@@ -103,7 +103,7 @@ const HomePage = ({ratings}) => {
                             Neverinstall
                         </Hover>,
                         running software on our resources and streaming them to users, so
-                        the software can be utilized irrespective of a user's operating system,
+                        the software can be utilized irrespective of a user&apos;s operating system,
                         or the hardware on which it runs (access to computing).
                     </div>
 
@@ -111,7 +111,7 @@ const HomePage = ({ratings}) => {
                         Accessibility of <b>software</b>, primarily, by making said software run in
                         the browser itself, particularly with tech like WASM. Imagine still
                         uploading images to the random servers on the cloud to convert them from
-                        .PNG to .JPG, or to convert a .docx to a .pdf, that's so 2010!
+                        .PNG to .JPG, or to convert a .docx to a .pdf, that&apos;s so 2010!
                     </div>
 
                     <div>
