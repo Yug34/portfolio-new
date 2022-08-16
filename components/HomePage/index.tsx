@@ -57,7 +57,7 @@ const HomePage = ({ratings}) => {
     }, []);
 
     return (
-        <>
+        <Styles.HomePageContainer>
             <Styles.NameIntro>
                 <Styles.Greeting>{"Hey! I'm"}</Styles.Greeting>
                 <Image alt={"Yug"} src={sign} width={400} height={200}/>
@@ -84,11 +84,11 @@ const HomePage = ({ratings}) => {
                     {engineDiv}
                 </div>
 
-                <Flex flexDirection={"column"} width={"100%"} align={"center"}>
+                <Flex flexDirection={"column"} width={"100%"} align={"flex-start"} rowGap={"12px"}>
                     <h2>Why do I write code?</h2>
                     <h3>What effect would I like my work to have?</h3>
 
-                    <div>
+                    <div style={{width: '100%', display: 'flex', alignItems: 'flex-start'}}>
                         I want to work towards making computing, software, and information more accessible.
                     </div>
 
@@ -125,7 +125,7 @@ const HomePage = ({ratings}) => {
                     </div>
                 </Flex>
             </Flex>
-        </>
+        </Styles.HomePageContainer>
     );
 };
 

@@ -11,19 +11,19 @@ export async function getStaticProps(context) {
     const client = initializeApollo();
     const {data} = await client.query({
         query: GET_RATINGS
-    })
+    });
 
     return {
         props: {
             ratings: data.ratings
         }
-    }
+    };
 }
 
 const Home: NextPage = ({ratings}) => {
     return (
         <HomePage ratings={ratings}/>
-    )
-}
+    );
+};
 
 export default Home

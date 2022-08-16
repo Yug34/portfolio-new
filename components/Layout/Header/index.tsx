@@ -6,6 +6,7 @@ import {Hover} from "../../Common/Hover";
 
 const HeaderContainer = styled.div`
   width: 100%;
+  background: #FFFFFF;
   position: fixed;
   top: 0;
   display: flex;

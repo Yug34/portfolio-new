@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import {px2vw, breakpoints} from "../../utils";
+
+export const HomePageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const Strike = styled.div<{ color?: string; top?: number; duration?: number; function?: string; fontColor?: string; strikeHeight?: number; }>`
   width: fit-content;
