@@ -20,6 +20,10 @@ const LayoutContainer = styled.div`
   @media (max-width: ${breakpoints.tabletWidth}px) {
     padding: clamp(2rem, ${px2vw((6 * 16) * (breakpoints.desktopFullWidth / breakpoints.tabletWidth))}, 6rem);
   };
+  
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+  }
 `;
 
 const Layout = ({children}) => {

@@ -8,7 +8,8 @@ export const HomePageContainer = styled.div`
 
 export const Strike = styled.div<{ color?: string; top?: number; duration?: number; function?: string; fontColor?: string; strikeHeight?: number; }>`
   width: fit-content;
-  font-size: 24px;
+  white-space: nowrap;
+  font-size: clamp(22px, ${px2vw(24)}, 24px);
   min-height: 30px;
   color: ${(props) => props.fontColor || "rgb(63, 62, 85)"};
   @keyframes strike {
@@ -24,7 +25,7 @@ export const Strike = styled.div<{ color?: string; top?: number; duration?: numb
   &::after {
     content: ' ';
     position: absolute;
-    top: ${(props) => props.top || 55}%;
+    top: ${(props) => props.top || 50}%;
     left: 0;
     width: 100%;
     border-radius: ${(props) => `${props.strikeHeight || 3}px`};
@@ -39,7 +40,7 @@ export const Strike = styled.div<{ color?: string; top?: number; duration?: numb
 `;
 
 export const TypedTitle = styled.div<{fontColor?: string;}>`
-  font-size: 24px;
+  font-size: clamp(20px, ${px2vw(24)}, 24px);
   min-height: 30px;
   color: ${(props) => props.fontColor || "rgb(63, 62, 85)"};
 `;
