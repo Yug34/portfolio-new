@@ -10,7 +10,7 @@ const WorkPage = () => {
                     <Styles.Date>Dec.2021 -- Present</Styles.Date>
                 </Styles.TitleContainer>
                 <Styles.CompanyNameContainer>
-                    {"--"}
+                    {"-"}
                     <Hover
                         externalHref={true}
                         href={"https://neverinstall.com"}
@@ -43,7 +43,7 @@ const WorkPage = () => {
                     <Styles.Date>Oct.2021 -- June 2022</Styles.Date>
                 </Styles.TitleContainer>
                 <Styles.CompanyNameContainer>
-                    {"--"}
+                    {"-"}
                     <Hover
                         externalHref={true}
                         href={"https://sail.cs.queensu.ca/members.html"}
@@ -113,7 +113,7 @@ const WorkPage = () => {
                     <Styles.Date>Sept. 2021 -- Dec. 2021</Styles.Date>
                 </Styles.TitleContainer>
                 <Styles.CompanyNameContainer>
-                    {"--"}
+                    {"-"}
                     <Hover
                         externalHref={true}
                         href={"https://www.isro.gov.in/"}
@@ -151,7 +151,7 @@ const WorkPage = () => {
                     <Styles.Date>Aug. 2020 -- Feb. 2022</Styles.Date>
                 </Styles.TitleContainer>
                 <Styles.CompanyNameContainer>
-                    -- University of Manitoba
+                    - University of Manitoba
                 </Styles.CompanyNameContainer>
                 <Styles.Supervisors>
                     Supervised by:
@@ -165,7 +165,7 @@ const WorkPage = () => {
                         •<Styles.WorkContent>
                         Implemented a system to locate data resources for Jefferson Lab&apos;s
                             <Hover
-                                style={{marginLeft: '4px'}}
+                                style={{marginLeft: '4px', marginRight: '4px'}}
                                 monoState
                                 externalHref={true}
                                 fontWeight={600}
@@ -175,7 +175,7 @@ const WorkPage = () => {
                             </Hover>
                             at
                             <Hover
-                                style={{marginLeft: '4px'}}
+                                style={{marginLeft: '4px', marginRight: '4px'}}
                                 monoState
                                 externalHref={true}
                                 fontWeight={600}
@@ -220,7 +220,7 @@ const WorkPage = () => {
                     <Styles.Date>Dec.2021 -- Present</Styles.Date>
                 </Styles.TitleContainer>
                 <Styles.CompanyNameContainer>
-                    -- IEEE, VGEC Student Branch
+                    - IEEE, VGEC Student Branch
                 </Styles.CompanyNameContainer>
                 <Styles.Work>
                     {[
