@@ -84,8 +84,8 @@ const HomePage = ({ratings}) => {
                 </div>
 
                 <Flex flexDirection={"column"} width={"100%"} align={"flex-start"} rowGap={"12px"}>
-                    <h2>Why do I write code?</h2>
-                    <h3>What effect would I like my work to have?</h3>
+                    <Styles.Question>Why do I write code?</Styles.Question>
+                    <Styles.Motivation>What effect would I like my work to have?</Styles.Motivation>
 
                     <div style={{width: '100%', display: 'flex', alignItems: 'flex-start'}}>
                         I want to work towards making computing, software, and information more accessible.

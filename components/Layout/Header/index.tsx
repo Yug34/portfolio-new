@@ -29,6 +29,7 @@ const LinkContainer = styled.div`
   justify-content: center;
   align-items: center;
   column-gap: 16px;
+  padding-bottom: 4px;
 `;
 
 const links = [

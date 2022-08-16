@@ -76,12 +76,22 @@ export const NameIntro = styled.div`
 `;
 
 export const Question = styled.div`
-  
+  margin-top: 24px;
+  font-size: 28px;
+  font-weight: 600;
 `;
 
-export const Motivation = styled.div``
+export const Motivation = styled.div`
+  margin: 12px 0 12px 0;
+  font-size: 22px;
+  font-weight: 600;
+`;
 
 export const Greeting = styled.div`
+  font-size: clamp(32px, ${px2vw(40)}, 40px);
   font-family: 'Dancing Script', cursive;
   white-space: nowrap;
+  @media (max-width: ${breakpoints.tabletWidth}px) {
+    font-size: clamp(24px, ${px2vw(30 * (breakpoints.desktopFullWidth / breakpoints.tabletWidth))}, 30px);
+  }
 `;

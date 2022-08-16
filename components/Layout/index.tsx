@@ -15,11 +15,11 @@ const LayoutContainer = styled.div`
   
   @media (max-width: ${breakpoints.scrollPoint}px) {
     padding: 2rem clamp(4rem, ${px2vw((12 * 16) * (breakpoints.desktopFullWidth / breakpoints.scrollPoint))}, 12rem);
-  }
+  };
   
   @media (max-width: ${breakpoints.tabletWidth}px) {
     padding: clamp(2rem, ${px2vw((6 * 16) * (breakpoints.desktopFullWidth / breakpoints.tabletWidth))}, 6rem);
-  }
+  };
 `;
 
 const Layout = ({children}) => {
