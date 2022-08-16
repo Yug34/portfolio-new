@@ -39,89 +39,113 @@ const Work = styled.div`
   justify-content: flex-start;
 `;
 
+const WorkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #aaaaaa;
+  padding-bottom: 12px;
+`;
+
 const WorkPage = () => {
     return (
-        <>
-            <TitleContainer>
-                <Title>Software Development Engineer 1 (SDE-I)</Title>
-                <Date>Dec.2021 -- Present</Date>
-            </TitleContainer>
-            <CompanyNameContainer>
-                {"--"}
-                <Hover
-                    externalHref={true}
-                    href={"https://neverinstall.com"}
-                    monoState
-                    fontWeight={600}
-                >
-                    Neverinstall
-                </Hover>
-            </CompanyNameContainer>
-            <Work>
-                {[
-                    "Optimized the objective load speed of the platform by decreasing code-size, minimizing HTTP requests, CSS sprites, and so on. Significantly optimized the perceived load speed of the platform by switching up how the platform serves a stream to the user.",
-                    "Designed and implemented database schemas, and APIs for various microservices.",
-                    "Streamlined interfaces of front-end components, with the goal to make them flexible and re-usable.",
-                    "Translated Figma designs to pixel-perfect responsive designs leveraging Next.js with Styled-Components & SCSS.",
-                    "This being an early-stage startup, I had the chance to take up opportunities to contribute to, and provide value for the company outside of engineering, for instance, helping with DevRel."
-                ].map((item) => (
-                    <div style={{display: 'flex'}} key={item}>
-                        •<WorkContent dangerouslySetInnerHTML={{__html: item}}/>
+        <div style={{display: "flex", flexDirection: 'column', rowGap: '12px'}}>
+            <WorkContainer>
+                <TitleContainer>
+                    <Title>Software Development Engineer 1 (SDE-I)</Title>
+                    <Date>Dec.2021 -- Present</Date>
+                </TitleContainer>
+                <CompanyNameContainer>
+                    {"--"}
+                    <Hover
+                        externalHref={true}
+                        href={"https://neverinstall.com"}
+                        monoState
+                        fontWeight={600}
+                    >
+                        Neverinstall
+                    </Hover>
+                </CompanyNameContainer>
+                <Work>
+                    {[
+                        "Optimized the objective load speed of the platform by decreasing code-size, minimizing HTTP requests, CSS sprites, and so on. Significantly optimized the perceived load speed of the platform by switching up how the platform serves a stream to the user.",
+                        "Designed and implemented database schemas, and APIs for various microservices.",
+                        "Streamlined interfaces of front-end components, with the goal to make them flexible and re-usable.",
+                        "Translated Figma designs to pixel-perfect responsive designs leveraging Next.js with Styled-Components & SCSS.",
+                        "This being an early-stage startup, I had the chance to take up opportunities to contribute to, and provide value for the company outside of engineering, for instance, helping with DevRel."
+                    ].map((item) => (
+                        <div style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}} key={item}>
+                            •<WorkContent dangerouslySetInnerHTML={{__html: item}}/>
+                        </div>
+                    ))}
+                </Work>
+            </WorkContainer>
+            <WorkContainer>
+                <TitleContainer>
+                    <Title>Research intern (on hiatus)</Title>
+                    <Date>Oct.2021 -- June 2022</Date>
+                </TitleContainer>
+                <CompanyNameContainer>
+                    {"--"}
+                    <Hover
+                        externalHref={true}
+                        href={"https://sail.cs.queensu.ca/members.html"}
+                        monoState
+                        fontWeight={600}
+                    >
+                        Queen&apos;s University, SAIL
+                    </Hover>
+                </CompanyNameContainer>
+                <Supervisors>
+                    Supervised by:
+                    <Hover externalHref={true} href="https://scholar.google.com/citations?user=XS9QH_UAAAAJ&hl=en&oi=ao"
+                           monoState fontWeight={600}>
+                        Prof. Bram Adams
+                    </Hover>
+                    from
+                    <Hover externalHref={true} href={"https://mcis.cs.queensu.ca/"} monoState fontWeight={600}>
+                        MCIS
+                    </Hover> &
+                    <Hover externalHref={true} href={"https://scholar.google.com/citations?user=bPnuCiMAAAAJ&hl=fr"}
+                           monoState fontWeight={600}>
+                        Dr. Eduardo Fernandes
+                    </Hover>
+                    from
+                    <Hover
+                        externalHref={true}
+                        href={"https://sail.cs.queensu.ca/members.html"}
+                        monoState
+                        fontWeight={600}
+                    >
+                        SAIL
+                    </Hover>
+                </Supervisors>
+                <Work>
+                    {[
+                        "We&apos;re conducting a multi-vocal literature review on the performance analysis of web applications and their performance optimization methods.",
+                        "We plan to submit a journal paper based on our research, possibly to the Empirical Software Engineering journal.",
+                        "Other than research, worked on fixing issues of the SAIL website, as well as refactoring and refining its code."
+                    ].map((item) => (
+                        <div style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}} key={item}>
+                            •<WorkContent dangerouslySetInnerHTML={{__html: item}}/>
+                        </div>
+                    ))}
+                    <div style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}}>
+                        •
+                        <WorkContent>
+                            Worked on an interactive
+                            <Hover
+                                style={{marginLeft: '4px'}}
+                                monoState
+                                externalHref={true}
+                                fontWeight={600}
+                                href={"https://sail.cs.queensu.ca/publications.html"}>
+                                publications browser
+                            </Hover> with D3.js.
+                        </WorkContent>
                     </div>
-                ))}
-            </Work>
-            <TitleContainer>
-                <Title>Research intern (on hiatus)</Title>
-                <Date>Oct.2021 -- June 2022</Date>
-            </TitleContainer>
-            <CompanyNameContainer>
-                {"--"}
-                <Hover
-                    externalHref={true}
-                    href={"https://sail.cs.queensu.ca/members.html"}
-                    monoState
-                    fontWeight={600}
-                >
-                    Queen&apos;s University, SAIL
-                </Hover>
-            </CompanyNameContainer>
-            <Supervisors>
-                Supervised by:
-                <Hover externalHref={true} href="https://scholar.google.com/citations?user=XS9QH_UAAAAJ&hl=en&oi=ao"
-                       monoState fontWeight={600}>
-                    Prof. Bram Adams
-                </Hover>
-                from
-                <Hover externalHref={true} href={"https://mcis.cs.queensu.ca/"} monoState fontWeight={600}>
-                    MCIS
-                </Hover> &
-                <Hover externalHref={true} href={"https://scholar.google.com/citations?user=bPnuCiMAAAAJ&hl=fr"}
-                       monoState fontWeight={600}>
-                    Dr. Eduardo Fernandes
-                </Hover>
-                from
-                <Hover
-                    externalHref={true}
-                    href={"https://sail.cs.queensu.ca/members.html"}
-                    monoState
-                    fontWeight={600}
-                >
-                    SAIL
-                </Hover>
-            </Supervisors>
-            <Work>
-                {[
-                    "We&apos;re conducting a multi-vocal literature review on the performance analysis of web applications and their performance optimization methods.",
-                    "We plan to submit a journal paper based on our research, possibly to the Empirical Software Engineering journal.",
-                    "Other than research, worked on fixing issues of the SAIL website, as well as refactoring and refining its code.",
-                    "Implemented an interactive publications browser with D3.js."
-                ].map((item) => (
-                    <div style={{display: 'flex'}} key={item}>
-                        •<WorkContent dangerouslySetInnerHTML={{__html: item}}/>
-                    </div>
-                ))}
-            </Work>
-        </>
+                </Work>
+            </WorkContainer>
+        </div>
     );
 };
 
