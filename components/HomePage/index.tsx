@@ -6,7 +6,7 @@ import Typed from "typed.js";
 import {Flex} from "../Common/Flex";
 import {Hover} from "../Common/Hover";
 
-const HomePage = ({ratings}) => {
+const HomePage = () => {
     const eng = useRef(null);
     const res = useRef(null);
     const [isEngineerTyped, setIsEngineerTyped] = useState(false);
@@ -62,32 +62,34 @@ const HomePage = ({ratings}) => {
                 <Image alt={"Yug"} src={sign} width={400} height={200}/>
             </Styles.NameIntro>
 
-            <Flex flexDirection={"column"} width={"fit-content"} align={"center"} mt="2rem">
-                {isEngineerTyped ? (
-                    <Styles.Strike strikeHeight={2}>
-                        Engineer
-                    </Styles.Strike>
-                ) : (
-                    <Styles.TypedTitle ref={eng}/>
-                )}
+            <Flex flexDirection={"column"} width={"fit-content"} align={"center"} mt={"2rem"}>
+                <Flex style={{minHeight: '100px'}} flexDirection={"column"} justify={"space-between"} width={"fit-content"} align={"center"}>
+                    {isEngineerTyped ? (
+                        <Styles.Strike strikeHeight={2}>
+                            Engineer
+                        </Styles.Strike>
+                    ) : (
+                        <Styles.TypedTitle ref={eng}/>
+                    )}
 
-                {isResearcherTyped ? (
-                    <Styles.Strike strikeHeight={2}>
-                        Researcher
-                    </Styles.Strike>
-                ) : (
-                    <Styles.TypedTitle ref={res}/>
-                )}
+                    {isResearcherTyped ? (
+                        <Styles.Strike strikeHeight={2}>
+                            Researcher
+                        </Styles.Strike>
+                    ) : (
+                        <Styles.TypedTitle ref={res}/>
+                    )}
 
-                <div style={{minHeight: '30px'}}>
-                    {engineDiv}
-                </div>
+                    <div style={{minHeight: '30px'}}>
+                        {engineDiv}
+                    </div>
+                </Flex>
 
                 <Flex flexDirection={"column"} width={"100%"} align={"flex-start"} rowGap={"12px"}>
                     <Styles.Question>Why do I write code?</Styles.Question>
-                    <Styles.Motivation>What effect would I like my work to have?</Styles.Motivation>
+                    <Styles.Motivation>..and what effect would I like my work to have?</Styles.Motivation>
 
-                    <div style={{width: '100%', display: 'flex', alignItems: 'flex-start'}}>
+                    <div style={{width: '100%', display: 'flex', alignItems: 'flex-start', fontStyle: 'italic'}}>
                         I want to work towards making computing, software, and information more accessible.
                     </div>
 

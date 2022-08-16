@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 interface HoverProps {
+    style?: React.CSSProperties;
     children: JSX.Element | string;
     href?: string;
     externalHref?: boolean;

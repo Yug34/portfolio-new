@@ -40,7 +40,7 @@ export const Strike = styled.div<{ color?: string; top?: number; duration?: numb
 `;
 
 export const TypedTitle = styled.div<{fontColor?: string;}>`
-  font-size: clamp(20px, ${px2vw(24)}, 24px);
+  font-size: clamp(22px, ${px2vw(24)}, 24px);
   min-height: 30px;
   color: ${(props) => props.fontColor || "rgb(63, 62, 85)"};
 `;
@@ -78,13 +78,13 @@ export const NameIntro = styled.div`
 
 export const Question = styled.div`
   margin-top: 24px;
-  font-size: 28px;
+  font-size: clamp(24px, ${px2vw(28)}, 28px);
   font-weight: 600;
 `;
 
 export const Motivation = styled.div`
   margin: 12px 0 12px 0;
-  font-size: 22px;
+  font-size: clamp(18px, ${px2vw(22)}, 22px);
   font-weight: 600;
 `;
 
