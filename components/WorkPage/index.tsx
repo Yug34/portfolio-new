@@ -19,6 +19,7 @@ const Supervisors = styled.div`
   width: 100%;
   justify-content: flex-start;
   column-gap: 4px;
+  font-style: italic;
 `;
 
 const CompanyNameContainer = styled.div`
@@ -39,17 +40,10 @@ const Work = styled.div`
   justify-content: flex-start;
 `;
 
-const WorkContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  border-bottom: 2px solid #aaaaaa;
-  padding-bottom: 12px;
-`;
-
 const WorkPage = () => {
     return (
         <div style={{display: "flex", flexDirection: 'column', rowGap: '12px'}}>
-            <WorkContainer>
+            <div>
                 <TitleContainer>
                     <Title>Software Development Engineer 1 (SDE-I)</Title>
                     <Date>Dec.2021 -- Present</Date>
@@ -78,8 +72,9 @@ const WorkPage = () => {
                         </div>
                     ))}
                 </Work>
-            </WorkContainer>
-            <WorkContainer>
+            </div>
+            <div style={{height: '2px', backgroundColor: '#777777', borderRadius: '2px', width: '100%'}}/>
+            <div>
                 <TitleContainer>
                     <Title>Research intern (on hiatus)</Title>
                     <Date>Oct.2021 -- June 2022</Date>
@@ -132,19 +127,20 @@ const WorkPage = () => {
                     <div style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}}>
                         •
                         <WorkContent>
-                            Worked on an interactive
+                            Worked on an
                             <Hover
                                 style={{marginLeft: '4px'}}
                                 monoState
                                 externalHref={true}
                                 fontWeight={600}
-                                href={"https://sail.cs.queensu.ca/publications.html"}>
-                                publications browser
+                                href={"https://sail.cs.queensu.ca/publications.html"}
+                            >
+                                interactive publications browser
                             </Hover> with D3.js.
                         </WorkContent>
                     </div>
                 </Work>
-            </WorkContainer>
+            </div>
         </div>
     );
 };
