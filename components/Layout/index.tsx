@@ -7,7 +7,7 @@ const LayoutContainer = styled.div`
   min-height: 100vh;
   padding: clamp(3rem, ${px2vw(4 * 16)}, 4rem) clamp(1rem, ${px2vw(30 * 16)}, 30rem);
   color: #202020;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

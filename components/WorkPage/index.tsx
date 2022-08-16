@@ -126,7 +126,7 @@ const WorkPage = () => {
                 </Supervisors>
                 <Work>
                     {[
-                        "We&apos;re conducting a multi-vocal literature review on the performance analysis of web applications and their performance optimization methods.",
+                        "We're conducting a multi-vocal literature review on the performance analysis of web applications and their performance optimization methods.",
                         "We plan to submit a journal paper based on our research, possibly to the Empirical Software Engineering journal.",
                         "Other than research, worked on fixing issues of the SAIL website, as well as refactoring and refining its code."
                     ].map((item) => (
@@ -220,7 +220,7 @@ const WorkPage = () => {
                             >
                                 MOLLER Experiment
                             </Hover>
-                            at 
+                            at
                             <Hover
                                 style={{marginLeft: '4px'}}
                                 monoState
@@ -235,7 +235,7 @@ const WorkPage = () => {
                 </div>
                 <div style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}}>
                         •<WorkContent>
-                        Assisted Prof. Wouter containerize remoll with Docker and Singularity, allowing users to remotely run remoll on 
+                        Assisted Prof. Wouter containerize remoll with Docker and Singularity, allowing users to remotely run remoll on
                             <Hover
                                 style={{marginLeft: '4px', marginRight: '4px'}}
                                 monoState
