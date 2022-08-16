@@ -41,6 +41,7 @@ export const Work = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  color: #555555;
 `;
 
 export const Line = styled.div`

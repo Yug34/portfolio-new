@@ -4,7 +4,6 @@ import * as Styles from "./HomePage.Styles";
 import {useEffect, useRef, useState} from "react";
 import Typed from "typed.js";
 import {Flex} from "../Common/Flex";
-import {GradientText} from "../Common/GradientText";
 import {Hover} from "../Common/Hover";
 
 const HomePage = ({ratings}) => {

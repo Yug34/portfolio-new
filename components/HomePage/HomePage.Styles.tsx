@@ -75,8 +75,13 @@ export const NameIntro = styled.div`
   flex-direction: row;
 `;
 
+export const Question = styled.div`
+  
+`;
+
+export const Motivation = styled.div``
+
 export const Greeting = styled.div`
   font-family: 'Dancing Script', cursive;
   white-space: nowrap;
 `;
-

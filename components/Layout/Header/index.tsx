@@ -5,6 +5,7 @@ import {useRouter} from 'next/router'
 import {Hover} from "../../Common/Hover";
 
 const HeaderContainer = styled.div`
+  z-index: 100;
   width: 100%;
   background: #FFFFFF;
   position: fixed;
