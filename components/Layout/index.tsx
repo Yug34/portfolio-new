@@ -2,10 +2,16 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {px2vw, breakpoints} from "../../utils";
 import Header from "./Header";
-import {SyntheticEvent, useEffect, useState} from "react";
+import {useState} from "react";
 import {useRouter} from "next/router";
 
-const LayoutContainer = styled.div`
+interface LayoutContainerProps {
+    onTouchStart: any;
+    onTouchMove: any;
+    onTouchEnd: any;
+}
+
+const LayoutContainer = styled.div<LayoutContainerProps>`
   min-height: 100vh;
   padding: clamp(3rem, ${px2vw(4 * 16)}, 4rem) clamp(1rem, ${px2vw(30 * 16)}, 30rem);
   color: #202020;
@@ -50,42 +56,42 @@ const links: LinkType[] = [
 
 const Layout = ({children}: {children: JSX.Element | string;}) => {
     const router = useRouter();
-    const [touchStart, setTouchStart] = useState(null)
-    const [touchEnd, setTouchEnd] = useState(null)
+    const [touchStart, setTouchStart] = useState<null | number>(null);
+    const [touchEnd, setTouchEnd] = useState<null | number>(null);
     let currentIndex = links.findIndex(link => link.url === router.asPath);
 
     const minSwipeDistance = 50
 
-    const onTouchStart = (e) => {
-        setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
-        setTouchStart(e.targetTouches[0].clientX)
-    }
+    const onTouchStart = (e: TouchEvent): void => {
+        setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
+        setTouchStart(e.targetTouches[0].clientX);
+    };
 
-    const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
+    const onTouchMove = (e: TouchEvent): void => setTouchEnd(e.targetTouches[0].clientX);
 
     const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) return
-        const distance = touchStart - touchEnd
-        const isLeftSwipe = distance > minSwipeDistance
-        const isRightSwipe = distance < -minSwipeDistance
-        if (isLeftSwipe || isRightSwipe) console.log('swipe', isLeftSwipe ? 'left' : 'right')
+        if (!touchStart || !touchEnd) return;
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+        if (isLeftSwipe || isRightSwipe) console.log('swipe', isLeftSwipe ? 'left' : 'right');
 
         if (isLeftSwipe) {
             if (currentIndex === links.length - 1) {
-                router.push(links[0].url)
+                router.push(links[0].url);
             } else {
-                router.push(links[currentIndex + 1].url)
+                router.push(links[currentIndex + 1].url);
             }
         }
 
         if (isRightSwipe) {
             if (currentIndex === 0) {
-                router.push(links[links.length - 1].url)
+                router.push(links[links.length - 1].url);
             } else {
-                router.push(links[currentIndex - 1].url)
+                router.push(links[currentIndex - 1].url);
             }
         }
-    }
+    };
 
     return (
         <LayoutContainer onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
