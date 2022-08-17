@@ -16,8 +16,8 @@ export async function getStaticProps(context) {
     };
 }
 
-const Ratings: NextPage = ({ratings}) => {
-    return <RatingsPage ratings={ratings}/>;
+const Ratings: NextPage = (ratings: any) => {
+    return <RatingsPage ratings={ratings.ratings}/>;
 };
 
 export default Ratings;

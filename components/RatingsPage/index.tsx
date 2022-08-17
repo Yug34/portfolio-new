@@ -1,22 +1,22 @@
-import {useEffect} from "react";
-
-interface Ratings {
-    id: number;
-    reviewer: string;
-    category: number;
-    comment: string;
-    rating: number;
-    created_at: string;
+interface RatingsPagePropType {
+    ratings: {
+        id: number;
+        reviewer: string;
+        category: number;
+        comment: string;
+        rating: number;
+        created_at: string;
+    }[];
 }
 
-const RatingsPage = (ratings: Ratings) => {
-    useEffect(() => {
-        console.log(ratings);
-    }, [ratings])
+const RatingsPage = (props: RatingsPagePropType) => {
+    const { ratings } = props;
 
     return (
         <div>
-            Ratings
+            {ratings.map((rating) => (
+                <div key={rating.reviewer}>{rating.reviewer}</div>
+            ))}
         </div>
     );
 };

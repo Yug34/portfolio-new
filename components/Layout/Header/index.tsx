@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {px2vw, breakpoints} from "../../../utils";
 import Link from "next/link";
 import {useRouter} from 'next/router'
 import {Hover} from "../../Common/Hover";
@@ -32,18 +31,15 @@ const LinkContainer = styled.div`
   padding-bottom: 4px;
 `;
 
-const links = [
-    {
-        url: '/',
-        name: 'About'
-    },
-    {
-        url: '/work',
-        name: 'Work'
-    }
-];
+interface HeaderPropsType {
+    links: {
+        url: string;
+        name: string;
+    }[]
+}
 
-const Header = () => {
+const Header = (props: HeaderPropsType) => {
+    const { links } = props;
     const { asPath } = useRouter();
 
     return (
