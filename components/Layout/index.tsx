@@ -22,7 +22,7 @@ const LayoutContainer = styled.div`
   };
   
   @media (max-width: 480px) {
-    padding: 1.5rem;
+    padding: 3rem 1rem;
   }
 `;
 

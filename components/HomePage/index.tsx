@@ -5,6 +5,7 @@ import {useEffect, useRef, useState} from "react";
 import Typed from "typed.js";
 import {Flex} from "../Common/Flex";
 import {Hover} from "../Common/Hover";
+import {px2vw} from "../../utils";
 
 const HomePage = () => {
     const eng = useRef(null);
@@ -37,6 +38,7 @@ const HomePage = () => {
                 setEngineDiv(
                     <Styles.LineUp>
                         <Styles.Strike
+                            style={{fontSize: `clamp(20px, ${px2vw(24)}, 24px)`}}
                             color={"linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 50%, rgba(255,158,232,1) 100%)"}
                             top={93}
                             duration={2}
