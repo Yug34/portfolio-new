@@ -169,7 +169,7 @@ const WorkPage = () => {
     return (
         <div style={{display: "flex", flexDirection: 'column', rowGap: '12px'}}>
             {workData.map((workItem) => (
-                <div>
+                <div key={workItem.companyName}>
                     <Styles.TitleContainer>
                         <Styles.Title>{workItem.title}</Styles.Title>
                         <Styles.Date>{workItem.date}</Styles.Date>

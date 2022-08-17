@@ -1,14 +1,14 @@
-const px2vw = (size: number, width: number = 1920) => `${(size / width) * 100}vw`;
-const px2vh = (size: number, height: number = 1080) => `${(size / height) * 100}vh`;
+export const px2vw = (size: number, width: number = 1920) => `${(size / width) * 100}vw`;
+export const px2vh = (size: number, height: number = 1080) => `${(size / height) * 100}vh`;
 
-const isClientIos = () => {
+export const isClientIos = () => {
     if (typeof window !== 'undefined' && window && window?.navigator && window?.navigator.userAgent) {
         return window?.navigator.userAgent.includes('iPhone');
     }
     return false;
 };
 
-const isClientMobile = () => {
+export const isClientMobile = () => {
     if (typeof navigator !== 'undefined' && navigator && navigator.userAgent) {
         return /android|webos|iphone|ipod|ipad|blackberry|iemobile|opera mini/i.test(navigator.userAgent);
     }
@@ -18,14 +18,14 @@ const isClientMobile = () => {
     return false;
 };
 
-const isTouchDevice = () => {
+export const isTouchDevice = () => {
     if (typeof window !== 'undefined') {
         return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
     }
     return false;
 };
 
-const isClientSafari = () => {
+export const isClientSafari = () => {
     return (
         /constructor/i.test(window.HTMLElement) ||
         (function (p) {
@@ -34,7 +34,7 @@ const isClientSafari = () => {
     );
 };
 
-const isAppleClient = () => {
+export const isAppleClient = () => {
     const platform =
         window?.navigator?.userAgentData?.platform || window?.navigator?.platform || window?.navigator?.userAgent;
 
@@ -46,19 +46,9 @@ const isAppleClient = () => {
     return false;
 };
 
-const breakpoints = {
+export const breakpoints = {
     desktopFullWidth: 1920,
     desktopMiniWidth: 1366,
     scrollPoint: 1023,
     tabletWidth: 768
-}
-
-module.exports = {
-    px2vw,
-    px2vh,
-    isClientMobile,
-    isTouchDevice,
-    isClientSafari,
-    isAppleClient,
-    breakpoints
 };
