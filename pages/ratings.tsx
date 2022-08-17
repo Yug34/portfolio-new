@@ -2,8 +2,9 @@ import type {NextPage} from 'next'
 import RatingsPage from "../components/RatingsPage";
 import initializeApollo from "../lib/apollo";
 import {GET_RATINGS} from "../graphql/queries";
+import {GetStaticPropsContext} from "next";
 
-export async function getStaticProps(context) {
+export async function getStaticProps(context: GetStaticPropsContext): Promise<{ props: { ratings: any } }> {
     const client = initializeApollo();
     const {data} = await client.query({
         query: GET_RATINGS
