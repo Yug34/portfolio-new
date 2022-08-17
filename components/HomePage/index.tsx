@@ -14,6 +14,7 @@ const HomePage = () => {
     const [engineDiv, setEngineDiv] = useState((<></>));
 
     useEffect(() => {
+        //@ts-ignore
         const typedEngr = new Typed(eng.current, {
             strings: ["Engineer"], // Strings to display
             typeSpeed: 90,
@@ -26,6 +27,7 @@ const HomePage = () => {
             }
         });
 
+        //@ts-ignore
         const typedRsrch = new Typed(res.current, {
             strings: ["Researcher"], // Strings to display
             typeSpeed: 90,

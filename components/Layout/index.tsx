@@ -26,7 +26,7 @@ const LayoutContainer = styled.div`
   }
 `;
 
-const Layout = ({children}) => {
+const Layout = ({children}: {children: JSX.Element | string;}) => {
     return (
         <LayoutContainer>
             <Header/>
