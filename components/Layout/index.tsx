@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {px2vw, breakpoints} from "../../utils";
 import Header from "./Header";
-import {useEffect} from "react";
+import {SyntheticEvent, useEffect, useState} from "react";
 import {useRouter} from "next/router";
 
 const LayoutContainer = styled.div`
@@ -50,69 +50,45 @@ const links: LinkType[] = [
 
 const Layout = ({children}: {children: JSX.Element | string;}) => {
     const router = useRouter();
+    const [touchStart, setTouchStart] = useState(null)
+    const [touchEnd, setTouchEnd] = useState(null)
+    let currentIndex = links.findIndex(link => link.url === router.asPath);
 
-    useEffect(() => {
-        document.addEventListener('touchstart', handleTouchStart, false);
-        document.addEventListener('touchmove', handleTouchMove, false);
+    const minSwipeDistance = 50
 
-        let currentIndex = links.findIndex(link => link.url === router.asPath);
+    const onTouchStart = (e) => {
+        setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
+        setTouchStart(e.targetTouches[0].clientX)
+    }
 
-        let xDown: any = null;
-        let yDown: any = null;
+    const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
 
-        function getTouches(evt) {
-            return evt.touches ||             // browser API
-                evt.originalEvent.touches; // jQuery
-        }
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return
+        const distance = touchStart - touchEnd
+        const isLeftSwipe = distance > minSwipeDistance
+        const isRightSwipe = distance < -minSwipeDistance
+        if (isLeftSwipe || isRightSwipe) console.log('swipe', isLeftSwipe ? 'left' : 'right')
 
-        function handleTouchStart(evt) {
-            const firstTouch = getTouches(evt)[0];
-            xDown = firstTouch.clientX;
-            yDown = firstTouch.clientY;
-        }
-
-        function handleTouchMove(evt) {
-            if ( ! xDown || ! yDown ) {
-                return;
-            }
-
-            let xUp = evt.touches[0].clientX;
-            let yUp = evt.touches[0].clientY;
-
-            let xDiff = xDown - xUp;
-            let yDiff = yDown - yUp;
-
-            if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-                if ( xDiff > 0 ) {
-                    /* right swipe */
-                    if(currentIndex === links.length - 1) {
-                        router.push(links[0].url)
-                    } else {
-                        router.push(links[currentIndex + 1].url)
-                    }
-                } else {
-                    /* left swipe */
-                    if(currentIndex === 0) {
-                        router.push(links[links.length - 1].url)
-                    } else {
-                        router.push(links[currentIndex - 1].url)
-                    }
-                }
+        if (isLeftSwipe) {
+            if (currentIndex === links.length - 1) {
+                router.push(links[0].url)
             } else {
-                if ( yDiff > 0 ) {
-                    /* down swipe */
-                } else {
-                    /* up swipe */
-                }
+                router.push(links[currentIndex + 1].url)
             }
-            /* reset values */
-            xDown = null;
-            yDown = null;
         }
-    }, [router]);
+
+        if (isRightSwipe) {
+            if (currentIndex === 0) {
+                router.push(links[links.length - 1].url)
+            } else {
+                router.push(links[currentIndex - 1].url)
+            }
+        }
+    }
 
     return (
-        <LayoutContainer>
+        <LayoutContainer onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <Header links={links}/>
             {children}
         </LayoutContainer>
