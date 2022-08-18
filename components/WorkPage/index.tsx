@@ -14,7 +14,7 @@ interface WorkDataType {
 const workData: WorkDataType[] = [
     {
         title: "Software Development Engineer 1 (SDE-I)",
-        date: "Dec.2021 -- Present",
+        date: "Dec. 2021 -- Present",
         isCompanyLinked: true,
         companyLink: "https://neverinstall.com",
         companyName: "Neverinstall",
@@ -154,7 +154,7 @@ const workData: WorkDataType[] = [
     },
     {
         title: "Student Developer",
-        date: "Dec.2021 -- Present",
+        date: "Nov. 2020 -- Sept. 2021",
         companyName: "IEEE, VGEC Student Branch",
         isCompanyLinked: false,
         workItems: [
@@ -167,7 +167,7 @@ const workData: WorkDataType[] = [
 
 const WorkPage = () => {
     return (
-        <div style={{display: "flex", flexDirection: 'column', rowGap: '12px'}}>
+        <div style={{display: "flex", flexDirection: 'column', rowGap: '12px', marginTop: '1rem'}}>
             {workData.map((workItem) => (
                 <div key={workItem.companyName}>
                     <Styles.TitleContainer>
