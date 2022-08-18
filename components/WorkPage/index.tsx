@@ -20,10 +20,10 @@ const workData: WorkDataType[] = [
         companyName: "Neverinstall",
         workItems: [
             "Optimized the objective load speed of the platform by decreasing code-size, minimizing HTTP requests, CSS sprites, and so on. Significantly optimized the perceived load speed of the platform by switching up how the platform serves a stream to the user.",
-            "Designed and implemented database schemas, and APIs for various microservices.",
-            "Streamlined interfaces of front-end components, with the goal to make them flexible and re-usable.",
-            "Translated Figma designs to pixel-perfect responsive designs leveraging Next.js with Styled-Components & SCSS.",
-            "This being an early-stage startup, I had the chance to take up opportunities to contribute to, and provide value for the company outside of engineering, for instance, helping with DevRel."
+            "Designed and implemented database schemas, and developed triggers and events integrated with microservices.",
+            "Streamlined interfaces of front-end components, with the goal to make them customizable and re-usable.",
+            "Translated Figma designs to pixel-perfect responsive designs Styled-Components & SCSS.",
+            "Took up opportunities to contribute to, and provide value for the start-up outside of engineering, like helping with the writing process of blogs targeted towards different developer personas."
         ]
     },
     {
