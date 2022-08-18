@@ -194,8 +194,8 @@ const WorkPage = () => {
                             {workItem.supervisors}
                         </Styles.Supervisors>
                     )}
-                    {workItem.workItems.map((item) => (
-                        <div style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}} key={typeof item === "string" ? item : item.key}>
+                    {workItem.workItems.map((item, index) => (
+                        <div style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}} key={typeof item === "string" ? item : index}>
                             •<Styles.WorkContent>{item}</Styles.WorkContent>
                         </div>
                     ))}

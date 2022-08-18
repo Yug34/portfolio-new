@@ -74,7 +74,6 @@ const Layout = ({children}: {children: JSX.Element | string;}) => {
         const distance = touchStart - touchEnd;
         const isLeftSwipe = distance > minSwipeDistance;
         const isRightSwipe = distance < -minSwipeDistance;
-        if (isLeftSwipe || isRightSwipe) console.log('swipe', isLeftSwipe ? 'left' : 'right');
 
         if (isLeftSwipe) {
             if (currentIndex === links.length - 1) {
