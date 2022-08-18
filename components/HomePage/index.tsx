@@ -63,11 +63,11 @@ const HomePage = () => {
         <Styles.HomePageContainer>
             <Styles.NameIntro>
                 <Styles.Greeting>{"Hey! I'm"}</Styles.Greeting>
-                <Image alt={"Yug"} src={sign} width={400} height={200}/>
+                <Image alt={"Yug Sign"} src={sign} width={400} height={200} placeholder={"blur"}/>
             </Styles.NameIntro>
 
-            <Flex flexDirection={"column"} width={"fit-content"} align={"center"} mt={"2rem"}>
-                <Flex style={{minHeight: '100px'}} flexDirection={"column"} justify={"space-between"} width={"fit-content"} align={"center"}>
+            <Styles.ContentContainer>
+                <Styles.TypedContainer>
                     {isEngineerTyped ? (
                         <Styles.Strike strikeHeight={2}>
                             Engineer
@@ -87,7 +87,7 @@ const HomePage = () => {
                     <div style={{minHeight: '30px'}}>
                         {engineDiv}
                     </div>
-                </Flex>
+                </Styles.TypedContainer>
 
                 <Flex flexDirection={"column"} width={"100%"} align={"flex-start"} rowGap={"12px"}>
                     <Styles.Question>Why do I write code?</Styles.Question>
@@ -129,7 +129,7 @@ const HomePage = () => {
                         of information so more people can benefit from it?
                     </div>
                 </Flex>
-            </Flex>
+            </Styles.ContentContainer>
         </Styles.HomePageContainer>
     );
 };

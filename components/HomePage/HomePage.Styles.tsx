@@ -1,9 +1,18 @@
 import styled from "styled-components";
 import {px2vw, breakpoints} from "../../utils";
+import {Flex} from "../Common/Flex";
 
 export const HomePageContainer = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const TypedContainer = styled(Flex)`
+  min-height: 100px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: fit-content;
+  align-items: center;
 `;
 
 export const Strike = styled.div<{ color?: string; top?: number; duration?: number; function?: string; fontColor?: string; strikeHeight?: number; }>`
@@ -39,7 +48,14 @@ export const Strike = styled.div<{ color?: string; top?: number; duration?: numb
   }
 `;
 
-export const TypedTitle = styled.div<{fontColor?: string;}>`
+export const ContentContainer = styled(Flex)`
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  margin-top: 2rem;
+`;
+
+export const TypedTitle = styled.div<{ fontColor?: string; }>`
   font-size: clamp(22px, ${px2vw(24)}, 24px);
   min-height: 30px;
   color: ${(props) => props.fontColor || "rgb(63, 62, 85)"};
