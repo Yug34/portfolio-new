@@ -167,8 +167,8 @@ const workData: WorkDataType[] = [
 
 const WorkPage = () => {
     return (
-        <div style={{display: "flex", flexDirection: 'column', rowGap: '12px', marginTop: '1rem'}}>
-            {workData.map((workItem) => (
+        <div style={{display: "flex", flexDirection: 'column', marginTop: '1rem'}}>
+            {workData.map((workItem, index) => (
                 <div key={workItem.companyName}>
                     <Styles.TitleContainer>
                         <Styles.Title>{workItem.title}</Styles.Title>
@@ -199,6 +199,9 @@ const WorkPage = () => {
                             •<Styles.WorkContent>{item}</Styles.WorkContent>
                         </div>
                     ))}
+                    {index !== workData.length - 1 && (
+                        <Styles.Line/>
+                    )}
                 </div>
             ))}
         </div>

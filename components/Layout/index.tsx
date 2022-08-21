@@ -47,11 +47,11 @@ const links: LinkType[] = [
     {
         url: '/work',
         name: 'Work'
+    },
+    {
+        url: '/ratings',
+        name: 'Reviews'
     }
-    // {
-    //     url: '/ratings',
-    //     name: 'Reviews'
-    // }
 ];
 
 const Layout = ({children}: {children: JSX.Element | string;}) => {
