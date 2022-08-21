@@ -1,6 +1,7 @@
 import { HeartSVG } from "./HeartSVG";
 import { capitalizeFirstLetter } from "../../utils";
 import * as Styles from "./RatingsPage.Styles";
+// import { useMutation } from "@apollo/client";
 
 interface RatingsPagePropType {
     ratings: {
@@ -15,15 +16,14 @@ interface RatingsPagePropType {
 
 const RatingsPage = (props: RatingsPagePropType) => {
     const { ratings } = props;
-
     const getReadableDate = (date: Date) => date.toDateString().split(' ').slice(1).join(' ');
 
     return (
         <Styles.RatingsContainer>
             {ratings.map((rating, index) => {
                 return (
-                    <>
-                        <Styles.Rating key={rating.id}>
+                    <div key={rating.id}>
+                        <Styles.Rating>
                             <HeartSVG count={rating.rating} />
                             <Styles.CommentText>{capitalizeFirstLetter(rating.comment)}</Styles.CommentText>
                             <Styles.AuthorDateContainer>
@@ -34,9 +34,10 @@ const RatingsPage = (props: RatingsPagePropType) => {
                         {index !== ratings.length - 1 && (
                             <Styles.Line />
                         )}
-                    </>
+                    </div>
                 )
             })}
+            {/*<div onClick={() => {console.log("Hey")}}>submit</div>*/}
         </Styles.RatingsContainer>
     );
 };
