@@ -30,18 +30,16 @@ const RatingsPage = (props: RatingsPagePropType) => {
     const [insertRating, { data, loading, error }] = useMutation(INSERT_RATINGS_ONE);
 
     const onSubmit = (data: any) => {
-        console.log(data)
-
-        // insertRating({
-        //     variables: {
-        //         reviewer_first_name: data.firstName,
-        //         reviewer_last_name: data.lastName,
-        //         category: 2,
-        //         comment: data.comment,
-        //         rating: data.rating,
-        //         email: data.email
-        //     }
-        // });
+        insertRating({
+            variables: {
+                reviewer_first_name: data.firstName,
+                reviewer_last_name: data.lastName,
+                category: 2,
+                comment: data.comment,
+                rating: data.rating,
+                email: data.email
+            }
+        });
     };
 
     const getReadableDate = (date: Date) => date.toDateString().split(' ').slice(1).join(' ');
@@ -83,7 +81,7 @@ const RatingsPage = (props: RatingsPagePropType) => {
                     <Styles.FormInput type="text" placeholder="Last Name (Optional)" {...register('lastName', { max: 20 })} />
                 </Styles.GradientBox>
                 <Styles.GradientBox background={"linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 90%, rgba(255,158,232,1) 100%)"}>
-                    <Styles.FormInput type="number" max={5} min={1} placeholder={`Rating: 1.0 to 5.0`} {...register('rating', { required: true, min: 1, max: 5 })} />
+                    <Styles.FormInput step='0.01' type="number" max={5} min={1} placeholder={`Rating: 1.0 to 5.0`} {...register('rating', { required: true, min: 1, max: 5 })} />
                 </Styles.GradientBox>
                 {errors.rating && <span>This is a required field</span>}
                 <Styles.GradientBox background={"linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 100%, rgba(255,158,232,1) 100%)"}>
