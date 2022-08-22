@@ -39,19 +39,22 @@ export const Author = styled.div`
 `;
 
 export const Form = styled.form`
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   flex-direction: column;
+  row-gap: 4px;
   width: 100%;
 `;
 
 export const FormInput = styled.input`
   width: 320px;
-  max-width: 100%;
+  font-size: 14px;
+  max-width: 90vw;
   border: none;
   border-radius: 16px;
-  padding: 4px 6px;
+  padding: 4px 12px;
+  height: 32px;
 
   &:focus {
     outline: none;
@@ -60,7 +63,11 @@ export const FormInput = styled.input`
 
 export const FormSubmit = styled.input`
   width: 140px;
-  max-width: 100%;
+  height: 32px;
+  cursor: pointer;
+  background: #FFFFFF;
+
+  font-size: 14px;
 
   border: none;
   border-radius: 16px;
