@@ -10,7 +10,7 @@ export async function getStaticProps(context: GetStaticPropsContext): Promise<{ 
         query: GET_RATINGS
     });
 
-    return {props: {ratings: data.ratings}, revalidate: 10};
+    return {props: {ratings: data.ratings}, revalidate: 2};
 }
 
 const Ratings: NextPage = (ratings: any) => {
