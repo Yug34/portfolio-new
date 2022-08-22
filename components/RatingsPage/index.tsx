@@ -1,10 +1,11 @@
 import { HeartSVG } from "./HeartSVG";
 import { capitalizeFirstLetter } from "../../utils";
 import * as Styles from "./RatingsPage.Styles";
-import {useMutation} from "@apollo/client";
-import {INSERT_RATINGS_ONE} from "../../graphql/queries";
+import {useMutation, useQuery} from "@apollo/client";
+import {GET_RATINGS, INSERT_RATINGS_ONE} from "../../graphql/queries";
 import { useForm } from 'react-hook-form';
 import {Flex} from "../Common/Flex";
+import {useEffect, useState} from "react";
 
 interface RatingsPagePropType {
     ratings: {
@@ -20,6 +21,7 @@ interface RatingsPagePropType {
 
 const RatingsPage = (props: RatingsPagePropType) => {
     const { ratings } = props;
+    const [ratingsData, setRatingsData] = useState<any[]>(props.ratings);
 
     const {
         register,
@@ -27,17 +29,21 @@ const RatingsPage = (props: RatingsPagePropType) => {
         formState: { errors }
     } = useForm();
 
-    const [insertRating, { data, loading, error }] = useMutation(INSERT_RATINGS_ONE);
+    const [insertRating, { data, loading, error }] = useMutation(INSERT_RATINGS_ONE, {
+        onCompleted: (data1) => {
+            setRatingsData([ratingsData.push(data1.insert_ratings_one)]);
+        }
+    });
 
-    const onSubmit = (data: any) => {
+    const onSubmit = (queryData: any) => {
         insertRating({
             variables: {
-                reviewer_first_name: data.firstName,
-                reviewer_last_name: data.lastName,
+                reviewer_first_name: queryData.firstName,
+                reviewer_last_name: queryData.lastName,
                 category: 2,
-                comment: data.comment,
-                rating: data.rating,
-                email: data.email
+                comment: queryData.comment,
+                rating: queryData.rating,
+                email: queryData.email
             }
         });
     };
