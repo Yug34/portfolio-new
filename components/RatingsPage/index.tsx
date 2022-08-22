@@ -83,7 +83,7 @@ const RatingsPage = (props: RatingsPagePropType) => {
                     <Styles.FormInput type="text" placeholder="Last Name (Optional)" {...register('lastName', { max: 20 })} />
                 </Styles.GradientBox>
                 <Styles.GradientBox background={"linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 90%, rgba(255,158,232,1) 100%)"}>
-                    <Styles.FormInput type="number" placeholder={`Rating: 1.0 to 5.0`} {...register('rating', { required: true, min: 1, max: 5 })} />
+                    <Styles.FormInput type="number" max={5} min={1} placeholder={`Rating: 1.0 to 5.0`} {...register('rating', { required: true, min: 1, max: 5 })} />
                 </Styles.GradientBox>
                 {errors.rating && <span>This is a required field</span>}
                 <Styles.GradientBox background={"linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 100%, rgba(255,158,232,1) 100%)"}>
