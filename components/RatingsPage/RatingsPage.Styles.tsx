@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {px2vw} from "../../utils";
+import {Flex} from "../Common/Flex";
 
 export const RatingsContainer = styled.div`
   display: flex;
@@ -35,6 +36,62 @@ export const AuthorDateContainer = styled.div`
 
 export const Author = styled.div`
   font-weight: 600;
+`;
+
+export const Form = styled.form`
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+`;
+
+export const FormInput = styled.input`
+  width: 320px;
+  max-width: 100%;
+  border: none;
+  border-radius: 16px;
+  padding: 4px 6px;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const FormSubmit = styled.input`
+  width: 140px;
+  max-width: 100%;
+
+  border: none;
+  border-radius: 16px;
+  padding: 4px 6px;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const GradientBox = styled.div<{background?: string;}>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
+  position: relative;
+  box-sizing: border-box;
+
+  background-clip: padding-box;
+  border: solid 2px transparent;
+  border-radius: 16px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -1px;
+    border-radius: inherit;
+    background: ${(props) => props.background || "linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 50%, rgba(255,158,232,1) 100%)"};
+  }
 `;
 
 export const DateContainer = styled.div`

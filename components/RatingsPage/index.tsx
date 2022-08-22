@@ -20,16 +20,26 @@ interface RatingsPagePropType {
 const RatingsPage = (props: RatingsPagePropType) => {
     const { ratings } = props;
 
-    const onSubmit = (data: any) => {
-        console.log(data)
-    }
     const {
         register,
         handleSubmit,
         formState: { errors }
     } = useForm();
 
-    const [insertRating, { data, loading, error }] = useMutation(INSERT_RATINGS_ONE)
+    const [insertRating, { data, loading, error }] = useMutation(INSERT_RATINGS_ONE);
+
+    const onSubmit = (data: any) => {
+        insertRating({
+            variables: {
+                reviewer_first_name: data.firstName,
+                reviewer_last_name: data.lastName,
+                category: 2,
+                comment: data.comment,
+                rating: data.rating,
+                email: data.email
+            }
+        });
+    };
 
     const getReadableDate = (date: Date) => date.toDateString().split(' ').slice(1).join(' ');
 
@@ -53,18 +63,30 @@ const RatingsPage = (props: RatingsPagePropType) => {
                 )
             })}
 
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="email" placeholder="Email" {...register('email', { required: true })} />
+            <Styles.Form onSubmit={handleSubmit(onSubmit)}>
+                <Styles.GradientBox background={"linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 10%, rgba(255,158,232,1) 100%)"}>
+                    <Styles.FormInput type="email" placeholder="Email" {...register('email', { required: true })} />
+                </Styles.GradientBox>
                 {errors.email && <span>This is a required field</span>}
-                <input type="text" placeholder="First Name" {...register('firstName', { required: true, min: 5, max: 20 })} />
+                <Styles.GradientBox background={"linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 30%, rgba(255,158,232,1) 100%)"}>
+                    <Styles.FormInput type="text" placeholder="First Name" {...register('firstName', { required: true, min: 5, max: 20 })} />
+                </Styles.GradientBox>
                 {errors.firstName && <span>This is a required field</span>}
-                <input type="text" placeholder="Last Name (Optional)" {...register('lastName', { max: 20 })} />
-                <input type="number" placeholder={`Rating: 1.0 to 5.0`} {...register('rating', { required: true, min: 1, max: 5 })} />
+                <Styles.GradientBox>
+                    <Styles.FormInput type="text" placeholder="Last Name (Optional)" {...register('lastName', { max: 20 })} />
+                </Styles.GradientBox>
+                <Styles.GradientBox background={"linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 70%, rgba(255,158,232,1) 100%)"}>
+                    <Styles.FormInput type="number" placeholder={`Rating: 1.0 to 5.0`} {...register('rating', { required: true, min: 1, max: 5 })} />
+                </Styles.GradientBox>
                 {errors.rating && <span>This is a required field</span>}
-                <input type="text" placeholder="comment" {...register('comment', {required: true, minLength: 10, maxLength: 300 })} />
+                <Styles.GradientBox background={"linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 100%, rgba(255,158,232,1) 100%)"}>
+                    <Styles.FormInput type="text" placeholder="comment" {...register('comment', {required: true, minLength: 10, maxLength: 500 })} />
+                </Styles.GradientBox>
                 {errors.comment && <span>This is a required field</span>}
-                <input type="submit"/>
-            </form>
+                <Styles.GradientBox background={"linear-gradient(90deg, rgba(255, 20, 20, 1) 0%, rgba(159,0,116,1) 20%, rgba(77,79,218,1) 100%)"}>
+                    <Styles.FormSubmit type="submit"/>
+                </Styles.GradientBox>
+            </Styles.Form>
 
             <div onClick={(e) => {
                 e.preventDefault();
