@@ -66,8 +66,12 @@ export const FormSubmit = styled.input`
   height: 32px;
   cursor: pointer;
   background: #FFFFFF;
-
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  color: #FFFFFF;
   font-size: 14px;
+  font-weight: 600;
 
   border: none;
   border-radius: 16px;
@@ -75,6 +79,34 @@ export const FormSubmit = styled.input`
 
   &:focus {
     outline: none;
+  }
+`;
+
+export const Loader = styled(Flex)`
+  width: 140px;
+  height: 32px;
+  padding: 0 16px;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: not-allowed;
+
+  background: #FFFFFF;
+  border-radius: 16px;
+`;
+
+export const Spinner = styled.div`
+  border: 2px solid #f3f3f3;
+  border-right: 2px solid #a0a0a0;
+  border-left: 2px solid #a0a0a0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 `;
 

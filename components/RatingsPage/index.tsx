@@ -21,7 +21,7 @@ interface RatingsPagePropType {
 
 const RatingsPage = (props: RatingsPagePropType) => {
     const { ratings } = props;
-    const [ratingsData, setRatingsData] = useState<any[]>(props.ratings);
+    const [ratingsData, setRatingsData] = useState<any>(props.ratings);
 
     const {
         register,
@@ -75,7 +75,7 @@ const RatingsPage = (props: RatingsPagePropType) => {
 
             <Flex justify={"center"} mt={"3rem"}>Leave a review or something, idk!</Flex>
             <Styles.Form onSubmit={handleSubmit(onSubmit)}>
-                <Styles.GradientBox background={"linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 0%, rgba(255,158,232,1) 100%)"}>
+                <Styles.GradientBox background={"linear-gradient(90deg, rgba(77,79,218,1) 0%, rgba(159,0,116,1) 10%, rgba(255,158,232,1) 100%)"}>
                     <Styles.FormInput type="email" placeholder="Email" {...register('email', { required: true })} />
                 </Styles.GradientBox>
                 {errors.email && <span>This is a required field</span>}
@@ -94,9 +94,18 @@ const RatingsPage = (props: RatingsPagePropType) => {
                     <Styles.FormInput type="text" placeholder="Comment" {...register('comment', {required: true, maxLength: 500 })} />
                 </Styles.GradientBox>
                 {errors.comment && <span>This is a required field</span>}
-                <Styles.GradientBox style={{marginTop: '6px'}} background={"linear-gradient(90deg, rgba(255, 20, 20, 1) 0%, rgba(159,0,116,1) 20%, rgba(77,79,218,1) 100%)"}>
-                    <Styles.FormSubmit type="submit"/>
-                </Styles.GradientBox>
+                {!loading ? (
+                    <Styles.GradientBox style={{marginTop: '6px'}} background={"linear-gradient(90deg, rgba(255, 20, 20, 1) 0%, rgba(159,0,116,1) 20%, rgba(77,79,218,1) 100%)"}>
+                        <Styles.FormSubmit type="submit"/>
+                    </Styles.GradientBox>
+                ) : (
+                    <Styles.GradientBox style={{marginTop: '6px'}} background={"linear-gradient(90deg, rgba(255, 20, 20, 1) 0%, rgba(159,0,116,1) 20%, rgba(77,79,218,1) 100%)"}>
+                        <Styles.Loader>
+                            Loading...
+                            <Styles.Spinner/>
+                        </Styles.Loader>
+                    </Styles.GradientBox>
+                )}
             </Styles.Form>
         </Styles.RatingsContainer>
     );
