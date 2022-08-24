@@ -26,7 +26,8 @@ const RatingsPage = (props: RatingsPagePropType) => {
     const {
         register,
         handleSubmit,
-        formState: { errors }
+        formState: { errors },
+        reset
     } = useForm();
 
     const [insertRating, { data, loading, error }] = useMutation(INSERT_RATINGS_ONE, {
@@ -45,6 +46,21 @@ const RatingsPage = (props: RatingsPagePropType) => {
                 rating: queryData.rating,
                 email: queryData.email
             }
+        });
+
+        reset({
+            email: null,
+            firstName: null,
+            lastName: null,
+            rating: null,
+            comment: null
+        }, {
+            keepErrors: true,
+                keepDirty: true,
+                keepIsSubmitted: false,
+                keepTouched: false,
+                keepIsValid: false,
+                keepSubmitCount: false,
         });
     };
 
