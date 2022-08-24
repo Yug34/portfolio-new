@@ -126,7 +126,8 @@ const HomePage = () => {
                         but more than that, information in and of itself. Could some piece
                         of information be represented more clearly? Or communicated more
                         effectively? How do we scale the presentation of that piece
-                        of information so more people can benefit from it?
+                        of information so more people can benefit from it? After all, sharing information
+                        is how humanity progresses. :)
                     </div>
                 </Flex>
             </Styles.ContentContainer>
