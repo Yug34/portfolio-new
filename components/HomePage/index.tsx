@@ -115,9 +115,10 @@ const HomePage = () => {
 
                     <div>
                         Accessibility of <b>software</b>, primarily, by making said software run in
-                        the browser itself, particularly with tech like WASM. Imagine still
-                        uploading images to the random servers on the cloud to convert them from
-                        .PNG to .JPG, or to convert a .docx to a .pdf, that&apos;s so 2010!
+                        the browser itself, particularly with tech like WASM. Yay for parallel processing on the web,
+                        for ML, video editing, and such! Also, imagine still uploading images to random
+                        servers on the cloud to convert them from .PNG to .JPG, or to convert a .docx to a .pdf,
+                        that&apos;s so 2010!
                     </div>
 
                     <div>
