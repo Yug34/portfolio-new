@@ -21,7 +21,7 @@ interface WorkDataType {
 
 const WorkPage = () => {
     return (
-        <Flex flexDirection={'column'} mt={'1rem'}>
+        <Flex flexDirection={'column'} mt={'1rem'} justify={'center'}>
             {workData.map((workItem, index) => (
                 <div key={workItem.companyName}>
                     <Styles.TitleContainer>
@@ -94,7 +94,7 @@ const workData: WorkDataType[] = [
         ]
     },
     {
-        title: "Research intern (on hiatus)",
+        title: "Research intern",
         date: "Oct. 2021 -- June 2022",
         isCompanyLinked: true,
         companyLink: "https://sail.cs.queensu.ca/members.html",

@@ -49,6 +49,14 @@ const links: LinkType[] = [
         name: 'Work'
     },
     {
+        url: '/projects',
+        name: 'Projects'
+    },
+    {
+        url: '/contact',
+        name: 'Contact'
+    },
+    {
         url: '/ratings',
         name: 'Reviews'
     }
