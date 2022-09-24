@@ -129,11 +129,11 @@ const ProjectsPage = () => {
                     </Styles.SkillsContainer>
 
                     {project.links.map((link: ProjectLinkType) => (
-                        <Hover externalHref={true} href={link.url} monoState fontWeight={600}>{link.text}</Hover>
+                        <Hover key={link.text} externalHref={true} href={link.url} monoState fontWeight={600}>{link.text}</Hover>
                     ))}
 
                     {project.features?.map((feature, index) => (
-                        <div style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}} key={typeof item === "string" ? item : index}>
+                        <div key={feature} style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}} key={typeof item === "string" ? item : index}>
                             •<Styles.WorkContent>{feature}</Styles.WorkContent>
                         </div>
                     ))}
