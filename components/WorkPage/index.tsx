@@ -1,5 +1,13 @@
 import {Hover} from "../Common/Hover";
 import * as Styles from "./WorkPage.Styles";
+import {Flex} from "../Common/Flex";
+
+interface SupervisorType {
+    name: string;
+    url: string;
+    labName?: string;
+    labUrl?: string;
+}
 
 interface WorkDataType {
     title: string;
@@ -8,8 +16,67 @@ interface WorkDataType {
     companyName: string;
     companyLink?: string;
     workItems: (string | JSX.Element)[];
-    supervisors?: JSX.Element;
+    supervisors?: SupervisorType[];
 }
+
+const WorkPage = () => {
+    return (
+        <Flex flexDirection={'column'} mt={'1rem'}>
+            {workData.map((workItem, index) => (
+                <div key={workItem.companyName}>
+                    <Styles.TitleContainer>
+                        <Styles.Title>{workItem.title}</Styles.Title>
+                        <Styles.Date>{workItem.date}</Styles.Date>
+                    </Styles.TitleContainer>
+                    <Styles.CompanyNameContainer>
+                        {"-"}
+                        {workItem.isCompanyLinked ? (
+                            <Hover
+                                externalHref={true}
+                                href={workItem.companyLink}
+                                monoState
+                                fontWeight={600}
+                            >
+                                {workItem.companyName}
+                            </Hover>
+                        ) : (
+                            <>{workItem.companyName}</>
+                        )}
+                    </Styles.CompanyNameContainer>
+                    {workItem.supervisors && (
+                        <Styles.Supervisors>
+                            Supervised by:
+                            {workItem.supervisors.map((supervisor: SupervisorType, index: number) => (
+                                <>
+                                    {(index !== 0) && '&'}
+                                    <Hover externalHref={true} href={supervisor.url} monoState fontWeight={600}>
+                                        {supervisor.name}
+                                    </Hover>
+                                    {supervisor.labName && (
+                                        <>
+                                            from
+                                            <Hover externalHref={true} href={supervisor.labUrl} monoState fontWeight={600}>
+                                                {supervisor.labName}
+                                            </Hover>
+                                        </>
+                                    )}
+                                </>
+                            ))}
+                        </Styles.Supervisors>
+                    )}
+                    {workItem.workItems.map((item, index) => (
+                        <div style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}} key={typeof item === "string" ? item : index}>
+                            •<Styles.WorkContent>{item}</Styles.WorkContent>
+                        </div>
+                    ))}
+                    {index !== workData.length - 1 && (
+                        <Styles.Line/>
+                    )}
+                </div>
+            ))}
+        </Flex>
+    );
+};
 
 const workData: WorkDataType[] = [
     {
@@ -32,32 +99,20 @@ const workData: WorkDataType[] = [
         isCompanyLinked: true,
         companyLink: "https://sail.cs.queensu.ca/members.html",
         companyName: "Queen's University, SAIL",
-        supervisors: (
-            <>
-                Supervised by:
-                <Hover externalHref={true} href="https://scholar.google.com/citations?user=XS9QH_UAAAAJ&hl=en&oi=ao"
-                       monoState fontWeight={600}>
-                    Prof. Bram Adams
-                </Hover>
-                from
-                <Hover externalHref={true} href={"https://mcis.cs.queensu.ca/"} monoState fontWeight={600}>
-                    MCIS
-                </Hover> &
-                <Hover externalHref={true} href={"https://scholar.google.com/citations?user=bPnuCiMAAAAJ&hl=fr"}
-                       monoState fontWeight={600}>
-                    Dr. Eduardo Fernandes
-                </Hover>
-                from
-                <Hover
-                    externalHref={true}
-                    href={"https://sail.cs.queensu.ca/members.html"}
-                    monoState
-                    fontWeight={600}
-                >
-                    SAIL
-                </Hover>
-            </>
-        ),
+        supervisors: [
+            {
+                name: 'Prof. Bram Adams',
+                url: 'https://scholar.google.com/citations?user=XS9QH_UAAAAJ&hl=en&oi=ao',
+                labName: 'MCIS',
+                labUrl: 'https://mcis.cs.queensu.ca/'
+            },
+            {
+                name: 'Dr. Eduardo Fernandes',
+                url: 'https://scholar.google.com/citations?user=bPnuCiMAAAAJ&hl=fr',
+                labName: 'SAIL',
+                labUrl: 'https://sail.cs.queensu.ca/members.html'
+            }
+        ],
         workItems: [
             "We're conducting a multi-vocal literature review on the performance analysis of web applications and their performance optimization methods.",
             "We plan to submit a journal paper based on our research, possibly to the Empirical Software Engineering journal.",
@@ -82,15 +137,12 @@ const workData: WorkDataType[] = [
         isCompanyLinked: true,
         companyLink: "https://www.isro.gov.in/",
         companyName: "Indian Space Research Organization, (ISRO)",
-        supervisors: (
-            <>
-                Supervised by:
-                <Hover externalHref={true} href="https://www.researchgate.net/profile/S-Singh-28"
-                       monoState fontWeight={600}>
-                    Dr. SK Singh
-                </Hover>
-            </>
-        ),
+        supervisors: [
+            {
+                name: 'Dr. SK Singh',
+                url: 'https://www.researchgate.net/profile/S-Singh-28',
+            }
+        ],
         workItems: [
             "Researched over identification of Snow Cover Areas and identifying temporal changes in the Himalayas region.",
             "Helped in developing Convolutional Neural Networks with TensorFlow and Keras to identify Snow Cover Areas and to predict patterns in the temporal changes.",
@@ -102,15 +154,12 @@ const workData: WorkDataType[] = [
         date: "Aug. 2020 -- Feb. 2022",
         isCompanyLinked: false,
         companyName: "University of Manitoba",
-        supervisors: (
-            <>
-                Supervised by:
-                <Hover externalHref={true} href="https://scholar.google.com/citations?user=1lVSmQwAAAAJ&hl=en"
-                       monoState fontWeight={600}>
-                    Prof. Wouter Deconinck
-                </Hover>
-            </>
-        ),
+        supervisors: [
+            {
+                name: 'Prof. Wouter Deconinck',
+                url: 'https://scholar.google.com/citations?user=1lVSmQwAAAAJ&hl=en',
+            }
+        ],
         workItems: [
             <>
                 Implemented a system to locate data resources for Jefferson Lab&apos;s
@@ -164,48 +213,5 @@ const workData: WorkDataType[] = [
         ]
     }
 ];
-
-const WorkPage = () => {
-    return (
-        <div style={{display: "flex", flexDirection: 'column', marginTop: '1rem'}}>
-            {workData.map((workItem, index) => (
-                <div key={workItem.companyName}>
-                    <Styles.TitleContainer>
-                        <Styles.Title>{workItem.title}</Styles.Title>
-                        <Styles.Date>{workItem.date}</Styles.Date>
-                    </Styles.TitleContainer>
-                    <Styles.CompanyNameContainer>
-                        {"-"}
-                        {workItem.isCompanyLinked ? (
-                            <Hover
-                                externalHref={true}
-                                href={workItem.companyLink}
-                                monoState
-                                fontWeight={600}
-                            >
-                                {workItem.companyName}
-                            </Hover>
-                        ) : (
-                            <>{workItem.companyName}</>
-                        )}
-                    </Styles.CompanyNameContainer>
-                    {workItem.supervisors && (
-                        <Styles.Supervisors>
-                            {workItem.supervisors}
-                        </Styles.Supervisors>
-                    )}
-                    {workItem.workItems.map((item, index) => (
-                        <div style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}} key={typeof item === "string" ? item : index}>
-                            •<Styles.WorkContent>{item}</Styles.WorkContent>
-                        </div>
-                    ))}
-                    {index !== workData.length - 1 && (
-                        <Styles.Line/>
-                    )}
-                </div>
-            ))}
-        </div>
-    );
-};
 
 export default WorkPage;
