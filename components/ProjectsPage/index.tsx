@@ -124,7 +124,7 @@ const ProjectsPage = () => {
 
                     <Styles.SkillsContainer>
                         {project.skills.map((skill: string, index: number) => (
-                            <Styles.Skill>{`${skill}${(index !== project.skills.length - 1) ? ',' : ''}`}</Styles.Skill>
+                            <Styles.Skill key={skill}>{`${skill}${(index !== project.skills.length - 1) ? ',' : ''}`}</Styles.Skill>
                         ))}
                     </Styles.SkillsContainer>
 
@@ -133,7 +133,7 @@ const ProjectsPage = () => {
                     ))}
 
                     {project.features?.map((feature, index) => (
-                        <div key={feature} style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}} key={typeof item === "string" ? item : index}>
+                        <div key={feature} style={{display: 'flex', width: '100%', justifyContent: 'flex-start'}}>
                             •<Styles.WorkContent>{feature}</Styles.WorkContent>
                         </div>
                     ))}
