@@ -86,11 +86,10 @@ const workData: WorkDataType[] = [
         companyLink: "https://neverinstall.com",
         companyName: "Neverinstall",
         workItems: [
-            "Optimized the objective load speed of the platform by decreasing code-size, minimizing HTTP requests, CSS sprites, and so on. Significantly optimized the perceived load speed of the platform by switching up how the platform serves a stream to the user.",
-            "Designed and implemented database schemas, and developed triggers and events integrated with microservices.",
-            "Streamlined interfaces of front-end components, with the goal to make them customizable and re-usable.",
-            "Translated Figma designs to pixel-perfect responsive designs Styled-Components & SCSS.",
-            "Took up opportunities to contribute to, and provide value for the start-up outside of engineering, like helping with the writing process of blogs targeted towards different developer personas."
+            "Optimized the objective load speed of the product by decreasing code-size, minimizing HTTP-requests, CSS sprites, optimizing images. Significantly optimized the perceived load speed of the product to improve the UX.",
+            "Developed the payment and checkout flow with Stripe. Designed database schemas, developed PostgreSQL triggers and events integrated with microservices.",
+            "Streamlined interfaces of front-end components for customizability and reusability. Used react optimization best practices like memoization to prevent redundant re-renders.",
+            "Translated Figma designs to responsive designs for desktop and mobile view-ports with Styled-Components, made pseudo-native designs (no scroll) responsive for all desktop view-port sizes."
         ]
     },
     {
@@ -101,12 +100,6 @@ const workData: WorkDataType[] = [
         companyName: "Queen's University, SAIL",
         supervisors: [
             {
-                name: 'Prof. Bram Adams',
-                url: 'https://scholar.google.com/citations?user=XS9QH_UAAAAJ&hl=en&oi=ao',
-                labName: 'MCIS',
-                labUrl: 'https://mcis.cs.queensu.ca/'
-            },
-            {
                 name: 'Dr. Eduardo Fernandes',
                 url: 'https://scholar.google.com/citations?user=bPnuCiMAAAAJ&hl=fr',
                 labName: 'SAIL',
@@ -114,21 +107,8 @@ const workData: WorkDataType[] = [
             }
         ],
         workItems: [
-            "We're conducting a multi-vocal literature review on the performance analysis of web applications and their performance optimization methods.",
-            "We plan to submit a journal paper based on our research, possibly to the Empirical Software Engineering journal.",
-            "Other than research, worked on fixing issues of the SAIL website, as well as refactoring and refining its code.",
-            <>
-                Worked on an
-                <Hover
-                    style={{marginLeft: '4px'}}
-                    monoState
-                    externalHref={true}
-                    fontWeight={600}
-                    href={"https://sail.cs.queensu.ca/publications.html"}
-                >
-                    interactive publications browser
-                </Hover> with D3.js.
-            </>
+            "Worked on conducting a multi-vocal literature review on the performance analysis of web applications and their performance optimization methods.",
+            "Fixed issues in the SAIL website's code and updating it. Also refined the code to be more refactorable."
         ]
     },
     {
@@ -144,9 +124,9 @@ const workData: WorkDataType[] = [
             }
         ],
         workItems: [
-            "Researched over identification of Snow Cover Areas and identifying temporal changes in the Himalayas region.",
-            "Helped in developing Convolutional Neural Networks with TensorFlow and Keras to identify Snow Cover Areas and to predict patterns in the temporal changes.",
-            "Set up the environment for the development of the Convolutional Neural Network models, and containerized it with Docker."
+            "Researched over identification of snow cover areas and detecting temporal changes in the Himalayas region.",
+            "Helped in developing Convolutional Neural Networks with TensorFlow and Keras to detect snow caps and predict patterns in their temporal changes.",
+            "Set up the environment for the development of the CNN models, containerized it with Docker."
         ]
     },
     {
@@ -197,7 +177,7 @@ const workData: WorkDataType[] = [
                 </Hover>
                 for high throughput simulations. Also assisted in finding and resolving bugs.
             </>,
-            "Wrote HTCondor job scripts and bash scripts for simulation job submission, and Python scripts for data storage and data retrieval from OSG.",
+            "Wrote HTCondor job scripts and bash scripts for submission of simulation jobs, and Python scripts for data storage and data retrieval from OSG.",
             "Set up a Binder workflow for remote data analysis of ROOT output files from OSG and other environments with Jupyter/Python and uproot."
         ]
     },
@@ -207,9 +187,9 @@ const workData: WorkDataType[] = [
         companyName: "IEEE, VGEC Student Branch",
         isCompanyLinked: false,
         workItems: [
-            "Developed the responsive components and pages using React for my college's IEEE branch. Automated workflows with Node.",
-            "Implemented various subsystems to assist other branches of IEEE VGEC SB, like an automated email system to send emails from an Excel sheet of data, saving days worth of effort.",
-            "Supervised junior student developers, teaching them the basic principles of software engineering and the tools necessary for it. Like version control, writing maintainable and refactorable code, and such."
+            "Developed the responsive components and pages using React for my college's IEEE branch.",
+            "Implemented subsystems to assist other branches of IEEE VGEC SB, like an automated email system to send emails from an Excel sheet of data, saving days worth of effort.",
+            "Maintained the GitHub repository for the front-end code, reviewed pull requests from junior developers."
         ]
     }
 ];
