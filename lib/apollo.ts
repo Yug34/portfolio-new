@@ -7,7 +7,7 @@ const createApolloClient = () => {
             uri: 'https://amusing-krill-94.hasura.app/v1/graphql',
             headers: {
                 'Content-Type': 'application/json',
-                'x-hasura-admin-secret': 'boC5iHfKZM564RvZZ5UPpL9lp3MZLi2hMtKGsiU61P1sFRIjdzRbiRHIt6jDv3ap'
+                'x-hasura-admin-secret': process.env.X_HASURA_ADMIN_SECRET
             }
         }),
         cache: new InMemoryCache()
